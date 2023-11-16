@@ -1,0 +1,34 @@
+.notFound {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding-top: 200px;
+
+    .title {
+        font-size: 33px;
+        color: #070709;
+        letter-spacing: 7px;
+    }
+
+    .description {
+        font-size: 14px;
+        color: #070709;
+        letter-spacing: 1px;
+    }
+
+    a {
+        outline: none;
+        border: none;
+        font-size: 12px;
+        background-color: #070709;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 12px;
+        cursor: pointer;
+    }
+}

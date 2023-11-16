@@ -115,7 +115,7 @@ const Header = () => {
                     <div className="row">
                         <div className="burgerIcon" onClick={() => { setMobileMenu(true) }}><RxHamburgerMenu /></div>
                         <div className="logo">
-                            <Link to="#">
+                            <Link to="/">
                                 <img src={Logo} alt="Logo" />
                             </Link>
                         </div>

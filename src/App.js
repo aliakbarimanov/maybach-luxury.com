@@ -4,18 +4,22 @@ import Footer from "./components/Footer";
 
 // import pages
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 // import sass
 import "./assets/scss/index.scss";
 
 // import react-router-dom hooks
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   );

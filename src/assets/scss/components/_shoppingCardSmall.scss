@@ -1,0 +1,52 @@
+.shoppingCardSmall {
+    width: 192px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    .description {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .title {
+            font-size: 14px;
+            color: #070709;
+        }
+
+        .info {
+            font-size: 12px;
+            color: #070709;
+        }
+
+        .info::after {
+            display: inline-block;
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: #070709;
+        }
+
+        .price {
+            font-size: 12px;
+            font-weight: 600;
+            color: #070709;
+        }
+    }
+}

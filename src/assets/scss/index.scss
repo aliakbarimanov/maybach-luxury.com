@@ -1,4 +1,9 @@
 // import parts
 @import "./base";
+@import "./variables";
 @import "./components/header";
+@import "./components/shoppingCardBig";
+@import "./components/shoppingCardSmall";
 @import "./pages/hero";
+@import "./pages/shopping";
+@import "./pages/notFound";

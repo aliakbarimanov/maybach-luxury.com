@@ -1,0 +1,38 @@
+.shoppingCardBig{
+    width: 383px;
+    height: 600px;
+    position: relative;
+    
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .description{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+
+        .title{
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .btn{
+            padding: 10px 30px;
+            font-size: 12px;
+            color: #fff;
+            border: 1px solid #fff;
+            text-transform: uppercase;
+        }
+    }
+}
