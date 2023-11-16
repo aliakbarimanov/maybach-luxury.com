@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.header {
+  width: 100%;
+}
+.header .mobileMenu {
+  display: none;
+}
+.header .container .row {
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .row .burgerIcon {
+  display: none;
+}
+.header .container .row .navBar .navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .row .preferences {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .container .row .preferences .headerButtonsList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=index.css.map */

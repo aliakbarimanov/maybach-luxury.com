@@ -1,0 +1,363 @@
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .mobileMenu {
+        width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #fff;
+        padding: 0 0 40px 0;
+        transition: all 0.4s ease;
+        overflow-y: scroll;
+
+        &.active {
+            width: 410px;
+        }
+
+        .closeBtn {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: #f9f9f9;
+            color: #798490;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+
+            &:hover {
+                background-color: #79849035;
+            }
+
+            span {
+                padding: 10px 0;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            .closeIcon {
+                font-size: 26px;
+            }
+        }
+
+        .countryButtonsList {
+            width: 100%;
+            display: flex;
+
+            .countryBtn {
+                button {
+                    outline: none;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    background-color: #fff;
+                    padding: 12px 16px;
+                    margin-right: 16px;
+                    color: #070709;
+
+                    span {
+                        font-size: 12px;
+                        margin-right: 3px;
+                    }
+
+                    .downIcon {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .categorySection {
+            width: 100%;
+            border-bottom: 1px solid #00000030;
+
+            .categoryTitle {
+                width: 100%;
+                padding: 18px;
+                letter-spacing: 2px;
+                font-size: 14px;
+                color: #070709;
+                text-transform: uppercase;
+                border-top: 1px solid #000;
+                border-bottom: 1px solid #000;
+            }
+
+            .categoryList {
+                width: 100%;
+
+                .categoryItem {
+                    width: 100%;
+                    border-bottom: 1px solid #00000010;
+
+                    a {
+                        width: 100%;
+                        padding: 12px 16px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        span {
+                            font-size: 14px;
+                            color: #070709;
+                            text-transform: uppercase;
+                        }
+
+                        .rightIcon {
+                            font-size: 22px;
+                            color: #070709;
+                        }
+                    }
+                }
+            }
+        }
+
+        .accountBox {
+            width: 100%;
+            padding: 40px 20px 20px 20px;
+
+            .accountTitle {
+                padding: 8px 0;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: 400;
+                letter-spacing: 2px;
+                color: #070709;
+            }
+
+            .loginLink {
+                display: inline-block;
+                width: 100%;
+                margin: 16px 0 10px;
+                padding: 13px 0;
+                font-size: 12px;
+                background-color: #070709;
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 2px;
+            }
+
+            .signUpBox {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                color: #070709;
+                font-size: 14px;
+
+                .signUpLink {
+                    text-decoration: underline;
+                    color: #070709;
+                }
+            }
+        }
+    }
+
+    .headerOverlay {
+        background-image: linear-gradient(#00000080, transparent);
+
+        .container {
+            .row {
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+
+                .burgerIcon {
+                    display: none;
+                    color: #fff;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                .logo {
+                    width: 15%;
+                }
+
+                .navBar {
+                    width: 70%;
+
+                    .navList {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 20px;
+
+                        .navItem {
+                            a {
+                                font-size: 15px;
+                                text-transform: uppercase;
+                                padding: 5px 15px 15px;
+                                color: #fff;
+                                transition: all 0.2s ease;
+
+                                &:hover {
+                                    border-bottom: 1px solid #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .preferences {
+                    width: 15%;
+
+                    .preferencesList {
+                        display: flex;
+                        justify-content: end;
+                        align-items: center;
+
+                        .preferencesItem {
+                            padding: 2px 8px;
+
+                            &.language {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+
+                                span {
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                    color: #fff;
+                                }
+
+                                .arrowDown {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    color: #fff;
+                                }
+                            }
+
+                            button {
+                                font-size: 23px;
+                                color: #fff;
+                                background-color: transparent;
+                                outline: none;
+                                border: none;
+                                cursor: pointer;
+                            }
+
+                            a {
+                                font-size: 23px;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        .headerOverlay {
+            .container {
+                .row {
+                    .burgerIcon {
+                        width: 33%;
+                        display: block;
+                    }
+
+                    .logo {
+                        width: 33%;
+                        text-align: center;
+                    }
+
+                    .navBar {
+                        display: none;
+                    }
+
+                    .preferences {
+                        width: 33%;
+
+                        .preferencesList {
+                            justify-content: end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .header {
+        .headerOverlay {
+            .container {
+                .row {
+                    .preferences {
+                        .preferencesList {
+                            .preferencesItem {
+                                &.userItem {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 410px) {
+    .header {
+        .mobileMenu {
+            &.active {
+                width: 100%;
+            }
+        }
+
+        .headerOverlay {
+            .container {
+                .row {
+
+                    .burgerIcon {
+                        width: 30%;
+                    }
+
+                    .logo {
+                        width: 30%;
+                    }
+
+                    .preferences {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    .header {
+        .headerOverlay {
+            .container {
+                .row {
+
+                    .burgerIcon {
+                        width: 20%;
+                    }
+
+                    .logo {
+                        width: 20%;
+                    }
+
+                    .preferences {
+                        width: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
