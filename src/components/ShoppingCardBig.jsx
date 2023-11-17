@@ -5,9 +5,9 @@ const ShoppingCardBig = () => {
     return(
         <div className="shoppingCardBig">
             <img src={men} alt="Shopping image" />
-            <div className="description">
-                <h2 className="title">men</h2>
-                <button className="btn">shop now</button>
+            <div className="bigCardDescription">
+                <h2 className="bigCardTitle">men</h2>
+                <button className="bigCardbtn">shop now</button>
             </div>
         </div>
     )
