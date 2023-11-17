@@ -23,12 +23,12 @@ const Shopping = () => {
                     </h2>
                     <p className="shoppingDescription">Highest-quality luxury goods are formed from carefully selected, exclusive materials. Handcrafting techniques that have grown with the experience of years and new, innovative techniques combine to create unique pieces.</p>
                     <Swiper
-                        slidesPerView={2}
+                        slidesPerView={1}
                         centeredSlides={false}
                         slidesPerGroupSkip={1}
                         breakpoints={{
                             769: {
-                                slidesPerView: 2,
+                                slidesPerView: 1,
                                 slidesPerGroup: 2,
                             },
                         }}

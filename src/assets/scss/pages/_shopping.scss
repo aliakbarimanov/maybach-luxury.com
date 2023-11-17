@@ -116,3 +116,66 @@
         }
     }
 }
+
+@media (max-width: 990px) {
+    .shopping {
+        .container {
+            .row {
+                padding: 0 20px;
+
+                .shoppingDescription {
+                    margin: 0 50px;
+                }
+
+                .shoppingSwiperList {
+                    .shoppingSwiperItem {
+                        flex-direction: column;
+
+                        .bigCard {
+                            width: 100%;
+                            height: 50%;
+                        }
+
+                        .smallCards {
+                            width: 100%;
+                            height: 50%;
+                            flex-direction: row;
+
+                            .smallCard {
+                                width: 50%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .shopping {
+        .container {
+            .row {
+                padding: 0 20px;
+
+                .shoppingDescription {
+                    margin: 0;
+                }
+
+                .shoppingSwiperList {
+                    .shoppingSwiperItem {
+                        .smallCards {
+                            flex-direction: column;
+
+                            .smallCard {
+                                width: 100%;
+                                height: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
