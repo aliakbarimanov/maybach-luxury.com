@@ -1,6 +1,6 @@
 .shopping {
     width: 100%;
-    padding-top: 60px;
+    margin-bottom: 110px;
 
     .container {
         .row {
@@ -93,6 +93,8 @@
 
 @media (max-width: 1200px) {
     .shopping {
+        margin-bottom: 80px;
+
         .container {
             .row {
                 padding: 0 20px;
@@ -155,6 +157,8 @@
 
 @media (max-width: 600px) {
     .shopping {
+        margin-bottom: 60px;
+
         .container {
             .row {
                 padding: 0 20px;

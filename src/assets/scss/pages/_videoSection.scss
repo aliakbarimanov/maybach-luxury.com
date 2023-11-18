@@ -1,0 +1,22 @@
+.videoSection {
+    width: 100%;
+    margin-bottom: 110px;
+
+    video {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .videoSection {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 500px) {
+    .videoSection {
+        margin-bottom: 60px;
+    }
+}

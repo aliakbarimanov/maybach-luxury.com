@@ -1,0 +1,205 @@
+.promotion {
+    width: 100%;
+    margin-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .promotionTitle {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 500;
+        color: #070709;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .promotionTitle::after {
+        display: block;
+        content: "";
+        width: 160px;
+        height: 2px;
+        background-color: #070709;
+        margin: 30px auto;
+    }
+
+    .promotionDescription {
+        margin: 0 250px;
+        padding: 0 0 60px;
+        text-align: center;
+        font-size: 14px;
+        color: #070709;
+        letter-spacing: 1px;
+    }
+
+    .promotionImageBox {
+        width: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .direction {
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            background-color: #00000030;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            transition: all .2s ease;
+
+            &:hover{
+                background-color: #00f;
+            }
+
+            span {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+
+            &.directionFirst {
+                top: 42%;
+                left: 36%;
+            }
+
+            &.directionSecond {
+                top: 37%;
+                left: 53%;
+            }
+
+            &.directionThird {
+                top: 51%;
+                left: 67%;
+            }
+        }
+
+        .promotionCard{
+            position: absolute;
+            z-index: 1;
+            top: 10%;
+            left: 10%;
+
+            &.promotionCardFirst{
+                top: 10%;
+                left: 10%;
+            }
+
+            &.promotionCardSecond{
+                top: 10%;
+                left: 40%;
+            }
+
+            &.promotionCardThird{
+                top: 10%;
+                left: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .promotion {    
+        .promotionDescription {
+            margin: 0 125px;
+        }
+    }
+}
+
+@media (max-width: 800px){
+    .promotion {
+        margin-bottom: 80px;
+
+        .promotionTitle {
+            font-size: 25px;
+        }
+    
+        .promotionDescription {
+            margin: 0 50px;
+            padding: 0 0 30px;
+        }
+    
+        .promotionImageBox {
+            .direction {    
+                &.directionFirst {
+                    top: 40%;
+                    left: 36%;
+                }
+    
+                &.directionSecond {
+                    top: 37%;
+                    left: 52%;
+                }
+    
+                &.directionThird {
+                    top: 50%;
+                    left: 67%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .promotion {
+        margin-bottom: 60px;
+
+        .promotionTitle {
+            font-size: 23px;
+        }
+    
+        .promotionDescription {
+            margin: 0;
+            padding: 0 10px;
+        }
+    
+        .promotionImageBox {
+            .direction {    
+                &.directionFirst {
+                    top: 40%;
+                    left: 34%;
+                }
+    
+                &.directionSecond {
+                    top: 37%;
+                    left: 50%;
+                }
+    
+                &.directionThird {
+                    top: 50%;
+                    left: 65%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 350px){
+    .promotion {    
+        .promotionImageBox {
+            .direction {    
+                &.directionFirst {
+                    top: 37%;
+                    left: 32%;
+                }
+    
+                &.directionSecond {
+                    top: 33%;
+                    left: 48%;
+                }
+    
+                &.directionThird {
+                    top: 49%;
+                    left: 62%;
+                }
+            }
+        }
+    }
+}

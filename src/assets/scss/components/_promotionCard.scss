@@ -1,0 +1,56 @@
+.promotionCard{
+    width: 300px;
+    height: 100px;
+    background-color: #00000030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .innerBox{
+        width: 290px;
+        height: 90px;
+        background-color: #fff;
+        display: flex;
+
+        .promotionCardImage{
+            width: 25%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .promotionCardDescription{
+            width: 75%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+
+            .promotionCardTitle{
+                font-size: 18px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: #000;
+            }
+
+            .promotionCardInfo{
+                font-size: 12px;
+                color: #070709;
+            }
+
+            .promotionCardPrice{
+                font-size: 14px;
+                font-weight: 700;
+                color: #000;
+            }
+        }
+    }
+}
