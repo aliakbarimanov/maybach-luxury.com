@@ -1,0 +1,113 @@
+.about {
+    width: 100%;
+    height: 110vh;
+
+    .container {
+        height: 100%;
+
+        .row {
+            width: 100%;
+            height: 100%;
+
+            .leftSide {
+                width: 50%;
+                height: 100%;
+                padding: 2px;
+            }
+
+            .rightSide {
+                width: 50%;
+                height: 100%;
+                display: flex;
+
+                .smallCardsBox {
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .smallCard {
+                        width: 100%;
+                        height: 100%;
+                        padding: 2px;
+                    }
+                }
+
+                .mediumCard {
+                    width: 50%;
+                    height: 100%;
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .about {
+        .container {
+            .row {
+                flex-direction: column;
+
+                .leftSide {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .rightSide {
+                    width: 100%;
+                    height: 100%;
+
+                    .smallCardsBox {
+                        width: 50%;
+                        height: 100%;
+    
+                        .smallCard {
+                            width: 100%;
+                            height: 50%;
+                        }
+                    }
+    
+                    .mediumCard {
+                        width: 50%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .about {
+        .container {
+            .row {
+                .leftSide {
+                    width: 100%;
+                    height: 25%;
+                }
+
+                .rightSide {
+                    width: 100%;
+                    height: 75%;
+                    flex-direction: column;
+
+                    .smallCardsBox {
+                        width: 100%;
+                        height: 50%;
+    
+                        .smallCard {
+                            width: 100%;
+                            height: 50%;
+                        }
+                    }
+    
+                    .mediumCard {
+                        width: 100%;
+                        height: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
