@@ -7,58 +7,317 @@
             width: 100%;
             flex-direction: column;
 
-            .footerTop{
+            .footerTop {
                 width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                border-bottom: 1px solid #ffffff20;
+                padding: 16px 20px 0;
 
-                .footerCard{
-                    width: 25%;
+                .footerCardList {
+                    width: 100%;
                     display: flex;
-                    flex-direction: column;
                     justify-content: center;
                     align-items: start;
 
-                    .footerCardTitle{
-                        font-size: 14px;
-                        color: #fff;
-                        text-transform: uppercase;
-                    }
+                    .footerCard {
+                        width: 25%;
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0 20px;
 
-                    .footerCardTitle::after{
-                        content: "";
-                        display: block;
-                        width: 72px;
-                        height: 1px;
-                    }
+                        .footerCardTitle {
+                            padding: 32px 0 8px;
 
-                    .footerCardLink{
-                        font-size: 12px;
-                        color: #fff;
-                        text-transform: uppercase;
+                            span{
+                                transition: all .2s ease;
+                            }
+
+                            .title {
+                                display: block;
+                                font-size: 14px;
+                                color: #fff;
+                                letter-spacing: 3px;
+                                text-transform: uppercase;
+                            }
+
+                            .plus {
+                                display: none;
+                                color: #fff;
+                                font-size: 15px;
+                                cursor: pointer;
+
+                                &.deactive{
+                                    display: none;
+                                }
+                            }
+
+                            .minus {
+                                display: none;
+                                color: #fff;
+                                font-size: 15px;
+                                cursor: pointer;
+
+                                &.active{
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        .footerCardTitle::after {
+                            content: "";
+                            display: block;
+                            width: 72px;
+                            height: 1px;
+                            margin: 20px 0 10px;
+                            background-color: #fff;
+                        }
+
+                        .linkList {
+                            display: flex;
+                            flex-direction: column;
+
+                            .footerCardLink {
+                                padding: 8px 0;
+                                font-size: 12px;
+                                letter-spacing: 1px;
+                                color: #fff;
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        .footerContact {
+                            p {
+                                color: #fff;
+                                font-size: 12px;
+                                letter-spacing: 1px;
+                                padding: 8px 0 12px;
+                            }
+
+                            a {
+                                display: block;
+                                color: #fff;
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                text-decoration: underline;
+                                padding: 8px 0 12px;
+                            }
+                        }
+
+                        .footerAbout {
+                            padding-top: 25px;
+                            .footerCardButton {
+                                letter-spacing: 1px;
+                                padding: 10px 15px;
+                                margin-top: 25px;
+                                backdrop-filter: blur(4px);
+                                border: 1px solid #fff;
+                                color: #fff;
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                                transition: all .2s ease;
+
+                                &:hover {
+                                    background-color: #ffffff40;
+                                }
+                            }
+
+                            .footerCardInfo {
+                                padding: 16px 0;
+                                margin-top: 25px;
+                                color: #fff;
+                                font-size: 12px;
+                                letter-spacing: 1px;
+                            }
+                        }
+                    }
+                }
+
+                .socialLinksList {
+                    width: 100%;
+                    padding: 35px 210px;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    gap: 16px;
+
+                    .socialLink {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background-color: #ffffff1a;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            padding: 6px;
+
+                            .socialIcon {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                                color: #fff;
+                            }
+                        }
                     }
                 }
             }
 
-            .footerBottom{
+            .footerBottom {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
+                align-items: center;
 
-                .footerLogo{
-                    width: 100%;
+                .footerLogo {
+                    width: 220px;
+                    height: 122px;
+                    margin: 65px 0;
 
-                    img{
+                    img {
                         width: 100%;
                         object-fit: contain;
                     }
                 }
 
-                .footerBottomDesc{
+                .footerBottomDesc {
+                    width: 100%;
+                    padding: 16px 0;
                     color: #fff;
                     font-size: 12px;
                     text-align: center;
+                    letter-spacing: 1px;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .footer {
+        .container {
+            .row {
+                .footerTop {
+                    .footerCardList {
+                        flex-wrap: wrap;
+
+                        .footerCard {
+                            width: 50%;
+                            padding: 0 20px 30px 0;
+                        }
+                    }
+
+                    .socialLinksList {
+                        padding: 0 320px 35px 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 770px) {
+    .footer {
+        .container {
+            .row {
+                .footerTop {
+                    padding: 16px 20px 0;
+
+                    .footerCardList {
+                        flex-direction: column;
+
+                        .footerCard {
+                            width: 100%;
+                            height: 60px;
+                            overflow: hidden;
+                            padding: 0 20px 5px;
+                            border-bottom: 1px solid #ffffff20;
+
+                            .footerCardTitle {
+                                display: flex;
+                                justify-content: space-between;
+
+                                .plus {
+                                    display: block;
+                                }
+                            }
+
+                            .footerCardTitle::after {
+                                display: none;
+                            }
+
+                            &.active{
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                    .socialLinksList {
+                        padding: 25px 0;
+                        justify-content: center;
+                    }
+                }
+
+                .footerBottom {
+                    .footerLogo {
+                        width: 150px;
+                        height: 85px;
+                        margin: 32px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .footer {
+        .container {
+            .row {
+                .footerTop {
+                    padding: 16px 0 0;
+
+                    .footerCardList {
+                        .footerCard {
+                            height: 50px;
+                            padding: 0 5px 5px;
+
+                            .footerCardTitle{
+                                padding: 20px 10px;
+
+                                .title{
+                                    font-size: 12px;
+                                }
+
+                                .plus{
+                                    font-size: 13px;
+                                }
+
+                                .minus{
+                                    font-size: 13px;
+                                }
+
+
+                            }
+                        }
+                    }
+
+                    .socialLinksList {
+                        padding: 25px 0;
+                        justify-content: center;
+                    }
+                }
+
+                .footerBottom {
+                    .footerLogo {
+                        width: 150px;
+                        height: 85px;
+                        margin: 32px 0;
+                    }
                 }
             }
         }
