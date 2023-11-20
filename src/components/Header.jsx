@@ -123,30 +123,552 @@ const Header = () => {
                             <ul className="navList">
                                 <li className="navItem">
                                     <Link to="#">men</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">women</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">accessories</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">new</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">fine writing</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">eye wear</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">saddlery</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">boutiques</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                                 <li className="navItem">
                                     <Link to="#">about</Link>
+                                    <div className="dropDown">
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                        <ul className="dropDownCard">
+                                            <li className="dropItem firstDropItem">
+                                                <Link to="#">Bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Bussines bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Travel bags</Link>
+                                            </li>
+                                            <li className="dropItem">
+                                                <Link to="#">Daypacks</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
