@@ -22,7 +22,7 @@ const Header = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
 
     return (
-        <section className="header">
+        <header className="header">
             <div className={mobileMenu ? "mobileMenu active" : "mobileMenu"}>
                 <button className="closeBtn" onClick={() => { setMobileMenu(false) }}>
                     <span>close menu</span>
@@ -173,7 +173,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </header>
     )
 }
 

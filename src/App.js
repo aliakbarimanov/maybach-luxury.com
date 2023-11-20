@@ -1,6 +1,7 @@
 // import components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ArrowUp from "./components/ArrowUp";
 
 // import pages
 import Home from "./pages/Home";
@@ -21,6 +22,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <ArrowUp />
     </BrowserRouter>
   );
 }

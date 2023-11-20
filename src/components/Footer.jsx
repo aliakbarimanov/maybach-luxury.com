@@ -16,10 +16,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
 
-    const [footerList, setFooterList] = useState(false);
-
-    const setTrue = () => setFooterList(true);
-    const setFalse = () => setFooterList(false);
+    const [firstList, setFirstList] = useState(false);
+    const [secondList, setSecondList] = useState(false);
+    const [thirdList, setThirdList] = useState(false);
+    const [fourthList, setFourthList] = useState(false);
 
     return (
         <footer className="footer">
@@ -27,11 +27,11 @@ const Footer = () => {
                 <div className="row">
                     <div className="footerTop">
                         <div className="footerCardList">
-                            <div className={footerList ? "footerCard active" : "footerCard"}>
+                            <div className={firstList ? "footerCard active" : "footerCard"}>
                                 <h2 className="footerCardTitle">
                                     <span className="title">LEGAL NOTICES</span>
-                                    <span className={footerList ? "plus deactive" : "plus"} onClick={setTrue}><FaPlus /></span>
-                                    <span className={footerList ? "minus active" : "minus"} onClick={setFalse}><FaMinus /></span>
+                                    <span className={firstList ? "plus deactive" : "plus"} onClick={()=>{setFirstList(true)}}><FaPlus /></span>
+                                    <span className={firstList ? "minus active" : "minus"} onClick={()=>{setFirstList(false)}}><FaMinus /></span>
                                 </h2>
                                 <div className="linkList">
                                     <Link to="#" className="footerCardLink">IMPRINT</Link>
@@ -41,11 +41,11 @@ const Footer = () => {
                                     <Link to="#" className="footerCardLink">INSTRUCTIONS FOR CANCELLATION</Link>
                                 </div>
                             </div>
-                            <div className={footerList ? "footerCard active" : "footerCard"}>
+                            <div className={secondList ? "footerCard active" : "footerCard"}>
                                 <h2 className="footerCardTitle">
                                     <span className="title">MAYBACH ONLINE STORE</span>
-                                    <span className={footerList ? "plus deactive" : "plus"} onClick={setTrue}><FaPlus /></span>
-                                    <span className={footerList ? "minus active" : "minus"} onClick={setFalse}><FaMinus /></span>
+                                    <span className={secondList ? "plus deactive" : "plus"} onClick={()=>{setSecondList(true)}}><FaPlus /></span>
+                                    <span className={secondList ? "minus active" : "minus"} onClick={()=>{setSecondList(false)}}><FaMinus /></span>
                                 </h2>
                                 <div className="linkList">
                                     <Link to="#" className="footerCardLink">MEN</Link>
@@ -57,11 +57,11 @@ const Footer = () => {
                                     <Link to="#" className="footerCardLink">FINE WRITING</Link>
                                 </div>
                             </div>
-                            <div className={footerList ? "footerCard active" : "footerCard"}>
+                            <div className={thirdList ? "footerCard active" : "footerCard"}>
                                 <h2 className="footerCardTitle">
                                     <span className="title">CUSTOMER SERVICE</span>
-                                    <span className={footerList ? "plus deactive" : "plus"} onClick={setTrue}><FaPlus /></span>
-                                    <span className={footerList ? "minus active" : "minus"} onClick={setFalse}><FaMinus /></span>
+                                    <span className={thirdList ? "plus deactive" : "plus"} onClick={()=>{setThirdList(true)}}><FaPlus /></span>
+                                    <span className={thirdList ? "minus active" : "minus"} onClick={()=>{setThirdList(false)}}><FaMinus /></span>
                                 </h2>
                                 <div className="linkList">
                                     <Link to="#" className="footerCardLink">PAYMENT & PRICES</Link>
@@ -72,11 +72,11 @@ const Footer = () => {
                                     <Link to="#" className="footerCardLink">NEWSLETTER</Link>
                                 </div>
                             </div>
-                            <div className={footerList ? "footerCard active" : "footerCard"}>
+                            <div className={fourthList ? "footerCard active" : "footerCard"}>
                                 <h2 className="footerCardTitle">
                                     <span className="title">STAY INFORMED</span>
-                                    <span className={footerList ? "plus deactive" : "plus"} onClick={setTrue}><FaPlus /></span>
-                                    <span className={footerList ? "minus active" : "minus"} onClick={setFalse}><FaMinus /></span>
+                                    <span className={fourthList ? "plus deactive" : "plus"} onClick={()=>{setFourthList(true)}}><FaPlus /></span>
+                                    <span className={fourthList ? "minus active" : "minus"} onClick={()=>{setFourthList(false)}}><FaMinus /></span>
                                 </h2>
                                 <div className="footerContact">
                                     <p>Support and counselling via:</p>

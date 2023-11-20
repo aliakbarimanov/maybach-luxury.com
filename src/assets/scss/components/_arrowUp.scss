@@ -1,0 +1,24 @@
+.arrowMain{
+    width: 0;
+    height: 0;
+    background-color: #07070990;
+    position: fixed;
+    bottom: 40px;
+    left: calc(100% - 70px);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.active{
+        width: 45px;
+        height: 40px;
+    }
+
+    .arrow{
+        color: #fff;
+        font-size: 20px;
+    }
+}
