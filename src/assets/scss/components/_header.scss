@@ -182,6 +182,11 @@
 
                 .logo {
                     width: 15%;
+
+                    &.deactive {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
                 }
 
                 .navBar {
@@ -191,6 +196,10 @@
                         display: flex;
                         align-items: center;
                         padding: 0 20px;
+
+                        &.deactive {
+                            display: none;
+                        }
 
                         .navItem {
                             a {
@@ -203,7 +212,7 @@
                                 &:hover {
                                     border-bottom: 1px solid #fff;
 
-                                    & + .dropDown{
+                                    &+.dropDown {
                                         display: flex;
                                     }
                                 }
@@ -220,7 +229,7 @@
                                 display: none;
                                 transition: all 0.3s ease;
 
-                                &:hover{
+                                &:hover {
                                     display: flex;
                                 }
 
@@ -315,7 +324,7 @@
                                 color: #fff;
                             }
 
-                            .languageList{
+                            .languageList {
                                 display: none;
                                 position: absolute;
                                 top: 45px;
@@ -323,14 +332,14 @@
                                 z-index: 1;
                                 background-color: #fff;
 
-                                &.active{
+                                &.active {
                                     display: block;
                                 }
 
-                                .languageItem{
+                                .languageItem {
                                     border-bottom: 1px solid #00000040;
-                                    
-                                    button{
+
+                                    button {
                                         font-size: 14px;
                                         text-transform: uppercase;
                                         color: #000;
@@ -338,32 +347,31 @@
                                         user-select: none;
                                         transition: all .2s ease;
 
-                                        &:hover{
+                                        &:hover {
                                             background-color: #00000040;
                                         }
                                     }
                                 }
                             }
 
-                            .headerAccountBox{
+                            .headerAccountBox {
                                 display: none;
                                 position: absolute;
-                                top: 45px;
+                                top: 41px;
                                 right: 0;
                                 z-index: 1;
                                 width: 200px;
                                 height: 150px;
                                 background-color: #fff;
-                                display: flex;
                                 flex-direction: column;
                                 gap: 10px;
                                 padding: 20px;
 
-                                &.active{
-                                    display: block;
+                                &.active {
+                                    display: flex;
                                 }
 
-                                .title{
+                                .title {
                                     width: 100%;
                                     text-align: center;
                                     text-transform: uppercase;
@@ -372,27 +380,45 @@
                                     margin-bottom: 20px;
                                 }
 
-                                a{
-                                    display: inline;
-                                    font-size: 14px;
+                                .login {
+                                    width: 100%;
+                                    display: inline-block;
+                                    color: #fff;
+                                    font-size: 12px;
+                                    text-transform: uppercase;
+                                    background-color: #000;
                                     letter-spacing: 1px;
                                     text-align: center;
-                                    color: #000;
+                                    padding: 10px 0;
+                                    transition: all .2s ease;
 
-                                    &.login{
-                                        width: 100%;
-                                        display: inline-block;
-                                        color: #fff;
-                                        font-size: 12px;
-                                        text-transform: uppercase;
-                                        background-color: #000;
-                                        padding: 10px 0;
+                                    &:hover {
+                                        background-color: #00000080;
                                     }
                                 }
-                                span{
-                                    display: inline;
-                                    font-size: 14px;
-                                    color: #000;
+
+                                .signUpBox {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: 10px;
+
+                                    span {
+                                        font-size: 14px;
+                                        color: #000;
+                                    }
+
+                                    a {
+                                        font-size: 14px;
+                                        text-align: center;
+                                        color: #000;
+                                        text-decoration: underline;
+                                        transition: all .2s ease;
+
+                                        &:hover {
+                                            text-decoration: none;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -402,7 +428,7 @@
         }
     }
 
-    .shoppingCart{
+    .shoppingCart {
         width: 0;
         height: 100vh;
         position: absolute;
@@ -413,11 +439,11 @@
         transition: all 0.4s ease;
         overflow: hidden;
 
-        &.active{
+        &.active {
             width: 410px;
         }
 
-        .cartExitBtn{
+        .cartExitBtn {
             width: 100%;
             border: none;
             outline: none;
@@ -435,11 +461,11 @@
                 background-color: #79849035;
             }
 
-            .arrowBack{
+            .arrowBack {
                 font-size: 26px;
             }
 
-            span{
+            span {
                 padding: 10px 0;
                 text-transform: uppercase;
                 font-size: 12px;
@@ -447,7 +473,7 @@
             }
         }
 
-        .shoppingCartTitle{
+        .shoppingCartTitle {
             padding: 20px 20px 0;
             font-size: 24px;
             font-weight: 400;
@@ -455,7 +481,7 @@
             text-transform: uppercase;
         }
 
-        .shoppingCartTitle::after{
+        .shoppingCartTitle::after {
             content: "";
             display: block;
             width: 100%;
@@ -464,7 +490,7 @@
             margin-top: 20px;
         }
 
-        .emptyNotification{
+        .emptyNotification {
             width: 100%;
             padding: 20px;
             display: flex;
@@ -473,13 +499,13 @@
             align-items: center;
             gap: 15px;
 
-            .notificationTop{
+            .notificationTop {
                 width: 100%;
                 height: 40px;
                 display: flex;
                 align-items: center;
 
-                .notificationIcon{
+                .notificationIcon {
                     padding: 8px;
                     width: 12%;
                     height: 100%;
@@ -488,7 +514,7 @@
                     border-radius: 3px 0 0 3px;
                 }
 
-                span{
+                span {
                     width: 88%;
                     height: 100%;
                     padding: 10px 20px;
@@ -500,7 +526,7 @@
                 }
             }
 
-            .notificationBottom{
+            .notificationBottom {
                 width: 100%;
                 padding: 12px;
                 background-color: #79849035;
@@ -512,7 +538,7 @@
             }
         }
 
-        .shoppingLink{
+        .shoppingLink {
             display: block;
             width: 100%;
             font-size: 12px;
@@ -523,8 +549,48 @@
             margin-top: 5px;
             transition: all .2s ease;
 
-            &:hover{
+            &:hover {
                 text-decoration: underline;
+            }
+        }
+    }
+
+    .searchBox {
+        position: absolute;
+        top: calc(50% - 20px);
+        left: 30%;
+        z-index: 9999;
+        width: 40%;
+        height: 40px;
+        padding: 0 15px 0 5px;
+        background-color: transparent;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid #fff;
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+
+        .searchBoxIcon {
+            font-size: 40px;
+            color: #fff;
+        }
+
+        input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: #fff;
+            font-size: 15px;
+            letter-spacing: 1px;
+
+            &::placeholder {
+                color: #fff;
             }
         }
     }
@@ -579,6 +645,30 @@
                 }
             }
         }
+
+        .searchBox {
+            left: 25%;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        .searchBox {
+            left: 20%;
+            width: 50%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        .searchBox {
+            top: calc(50% - 30px);
+            left: 20%;
+            width: 40%;
+        }
     }
 }
 
@@ -609,8 +699,8 @@
             }
         }
 
-        .shoppingCart{
-            &.active{
+        .shoppingCart {
+            &.active {
                 width: 100%;
             }
         }
@@ -636,6 +726,11 @@
                     }
                 }
             }
+        }
+
+        .searchBox {
+            left: 15%;
+            width: 35%;
         }
     }
 }

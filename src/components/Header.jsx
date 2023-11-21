@@ -25,6 +25,15 @@ const Header = () => {
     const [shoppingCart, setShoppingCart] = useState(false);
     const [languageList, setLanguageList] = useState(false);
     const [headerAccountBox, setHeaderAccountBox] = useState(false);
+    const [searchBox, setSearchBox] = useState(false);
+    const [hiddenNavList, setHiddenNavList] = useState(false);
+    const [hiddenLogo, setHiddenLogo] = useState(false);
+
+    const clickSearch = () => {
+        setSearchBox(!searchBox);
+        setHiddenNavList(!hiddenNavList);
+        setHiddenLogo(!hiddenLogo);
+    }
 
     return (
         <header className="header">
@@ -119,13 +128,13 @@ const Header = () => {
                 <div className="container">
                     <div className="row">
                         <div className="burgerIcon" onClick={() => { setMobileMenu(true) }}><RxHamburgerMenu /></div>
-                        <div className="logo">
+                        <div className={hiddenLogo ? "logo deactive" : "logo"}>
                             <Link to="/">
                                 <img src={Logo} alt="Logo" />
                             </Link>
                         </div>
                         <nav className="navBar">
-                            <ul className="navList">
+                            <ul className={hiddenNavList ? "navList deactive" : "navList"}>
                                 <li className="navItem">
                                     <Link to="#">men</Link>
                                     <div className="dropDown">
@@ -679,7 +688,7 @@ const Header = () => {
                         </nav>
                         <div className="preferences">
                             <ul className="preferencesList">
-                                <li className="preferencesItem language userItem" onClick={()=>{setLanguageList(!languageList)}}>
+                                <li className="preferencesItem language userItem" onClick={() => { setLanguageList(!languageList) }}>
                                     <span>EN</span>
                                     <IoIosArrowDown className="arrowDown" />
                                     <ul className={languageList ? "languageList active" : "languageList"}>
@@ -692,21 +701,23 @@ const Header = () => {
                                     </ul>
                                 </li>
                                 <li className="preferencesItem">
-                                    <button><LiaSearchSolid /></button>
+                                    <button onClick={clickSearch}><LiaSearchSolid /></button>
                                 </li>
                                 <li className="preferencesItem">
                                     <a href="#"><CiHeart /></a>
                                 </li>
                                 <li className="preferencesItem userItem">
-                                    <button onClick={()=>{setHeaderAccountBox(true)}}><CiUser /></button>
+                                    <button onClick={() => { setHeaderAccountBox(!headerAccountBox) }}><CiUser /></button>
                                     <div className={headerAccountBox ? "headerAccountBox active" : "headerAccountBox"}>
                                         <h2 className="title">my account</h2>
                                         <Link to="#" className="login">Login</Link>
-                                        <span>or</span>
-                                        <Link to="#">sign up</Link>
+                                        <div className="signUpBox">
+                                            <span>or</span>
+                                            <Link to="#">sign up</Link>
+                                        </div>
                                     </div>
                                 </li>
-                                <li className="preferencesItem" onClick={()=>{setShoppingCart(true)}}>
+                                <li className="preferencesItem" onClick={() => { setShoppingCart(true) }}>
                                     <a href="#"><HiOutlineShoppingBag /></a>
                                 </li>
                             </ul>
@@ -715,19 +726,23 @@ const Header = () => {
                 </div>
             </div>
             <div className={shoppingCart ? "shoppingCart active" : "shoppingCart"}>
-                <button className="cartExitBtn" onClick={()=>{setShoppingCart(false)}}>
+                <button className="cartExitBtn" onClick={() => { setShoppingCart(false) }}>
                     <IoIosArrowBack className="arrowBack" />
                     <span>continue shopping</span>
                 </button>
                 <h2 className="shoppingCartTitle">Shopping cart</h2>
                 <div className="emptyNotification">
                     <div className="notificationTop">
-                        <ImNotification className="notificationIcon"/>
+                        <ImNotification className="notificationIcon" />
                         <span>Your shopping cart is empty</span>
                     </div>
                     <p className="notificationBottom">proceed to checkout</p>
                 </div>
                 <Link to="#" className="shoppingLink">Go to shopping cart</Link>
+            </div>
+            <div className={searchBox ? "searchBox active" : "searchBox"}>
+                <MdKeyboardArrowRight className="searchBoxIcon" />
+                <input type="text" name="search" placeholder="Search all categories.." />
             </div>
         </header>
     )
