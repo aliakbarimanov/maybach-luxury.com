@@ -7,6 +7,8 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import { ImNotification } from "react-icons/im";
 
 // import react hooks
 import { useState } from "react";
@@ -20,6 +22,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
 
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [shoppingCart, setShoppingCart] = useState(false);
+    const [languageList, setLanguageList] = useState(false);
+    const [headerAccountBox, setHeaderAccountBox] = useState(false);
 
     return (
         <header className="header">
@@ -674,9 +679,17 @@ const Header = () => {
                         </nav>
                         <div className="preferences">
                             <ul className="preferencesList">
-                                <li className="preferencesItem language userItem">
+                                <li className="preferencesItem language userItem" onClick={()=>{setLanguageList(!languageList)}}>
                                     <span>EN</span>
                                     <IoIosArrowDown className="arrowDown" />
+                                    <ul className={languageList ? "languageList active" : "languageList"}>
+                                        <li className="languageItem">
+                                            <button>DEUTSCH</button>
+                                        </li>
+                                        <li className="languageItem">
+                                            <button>ENGLISH</button>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li className="preferencesItem">
                                     <button><LiaSearchSolid /></button>
@@ -685,15 +698,36 @@ const Header = () => {
                                     <a href="#"><CiHeart /></a>
                                 </li>
                                 <li className="preferencesItem userItem">
-                                    <button><CiUser /></button>
+                                    <button onClick={()=>{setHeaderAccountBox(true)}}><CiUser /></button>
+                                    <div className={headerAccountBox ? "headerAccountBox active" : "headerAccountBox"}>
+                                        <h2 className="title">my account</h2>
+                                        <Link to="#" className="login">Login</Link>
+                                        <span>or</span>
+                                        <Link to="#">sign up</Link>
+                                    </div>
                                 </li>
-                                <li className="preferencesItem">
+                                <li className="preferencesItem" onClick={()=>{setShoppingCart(true)}}>
                                     <a href="#"><HiOutlineShoppingBag /></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={shoppingCart ? "shoppingCart active" : "shoppingCart"}>
+                <button className="cartExitBtn" onClick={()=>{setShoppingCart(false)}}>
+                    <IoIosArrowBack className="arrowBack" />
+                    <span>continue shopping</span>
+                </button>
+                <h2 className="shoppingCartTitle">Shopping cart</h2>
+                <div className="emptyNotification">
+                    <div className="notificationTop">
+                        <ImNotification className="notificationIcon"/>
+                        <span>Your shopping cart is empty</span>
+                    </div>
+                    <p className="notificationBottom">proceed to checkout</p>
+                </div>
+                <Link to="#" className="shoppingLink">Go to shopping cart</Link>
             </div>
         </header>
     )

@@ -214,6 +214,7 @@
                                 position: absolute;
                                 top: 65px;
                                 left: 0;
+                                z-index: 99;
                                 padding: 50px 50px 60px;
                                 background-color: #fff;
                                 display: none;
@@ -229,7 +230,7 @@
                                     display: flex;
                                     flex-direction: column;
                                     justify-content: center;
-                                    align-items: start;
+                                    align-items: flex-start;
                                     gap: 20px;
 
                                     .dropItem {
@@ -270,22 +271,25 @@
 
                     .preferencesList {
                         display: flex;
-                        justify-content: end;
+                        justify-content: flex-end;
                         align-items: center;
 
                         .preferencesItem {
                             padding: 2px 8px;
+                            position: relative;
 
                             &.language {
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
                                 align-items: center;
+                                cursor: pointer;
 
                                 span {
                                     font-size: 15px;
                                     font-weight: 600;
                                     color: #fff;
+                                    user-select: none;
                                 }
 
                                 .arrowDown {
@@ -296,21 +300,231 @@
                             }
 
                             button {
+                                width: 100%;
                                 font-size: 23px;
                                 color: #fff;
                                 background-color: transparent;
                                 outline: none;
                                 border: none;
                                 cursor: pointer;
+                                user-select: none;
                             }
 
                             a {
                                 font-size: 23px;
                                 color: #fff;
                             }
+
+                            .languageList{
+                                display: none;
+                                position: absolute;
+                                top: 45px;
+                                right: 0;
+                                z-index: 1;
+                                background-color: #fff;
+
+                                &.active{
+                                    display: block;
+                                }
+
+                                .languageItem{
+                                    border-bottom: 1px solid #00000040;
+                                    
+                                    button{
+                                        font-size: 14px;
+                                        text-transform: uppercase;
+                                        color: #000;
+                                        padding: 10px 20px;
+                                        user-select: none;
+                                        transition: all .2s ease;
+
+                                        &:hover{
+                                            background-color: #00000040;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .headerAccountBox{
+                                display: none;
+                                position: absolute;
+                                top: 45px;
+                                right: 0;
+                                z-index: 1;
+                                width: 200px;
+                                height: 150px;
+                                background-color: #fff;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                padding: 20px;
+
+                                &.active{
+                                    display: block;
+                                }
+
+                                .title{
+                                    width: 100%;
+                                    text-align: center;
+                                    text-transform: uppercase;
+                                    font-size: 14px;
+                                    letter-spacing: 1px;
+                                    margin-bottom: 20px;
+                                }
+
+                                a{
+                                    display: inline;
+                                    font-size: 14px;
+                                    letter-spacing: 1px;
+                                    text-align: center;
+                                    color: #000;
+
+                                    &.login{
+                                        width: 100%;
+                                        display: inline-block;
+                                        color: #fff;
+                                        font-size: 12px;
+                                        text-transform: uppercase;
+                                        background-color: #000;
+                                        padding: 10px 0;
+                                    }
+                                }
+                                span{
+                                    display: inline;
+                                    font-size: 14px;
+                                    color: #000;
+                                }
+                            }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .shoppingCart{
+        width: 0;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 999;
+        background-color: #fff;
+        transition: all 0.4s ease;
+        overflow: hidden;
+
+        &.active{
+            width: 410px;
+        }
+
+        .cartExitBtn{
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: #f9f9f9;
+            color: #798490;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+
+            &:hover {
+                background-color: #79849035;
+            }
+
+            .arrowBack{
+                font-size: 26px;
+            }
+
+            span{
+                padding: 10px 0;
+                text-transform: uppercase;
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+        }
+
+        .shoppingCartTitle{
+            padding: 20px 20px 0;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .shoppingCartTitle::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            margin-top: 20px;
+        }
+
+        .emptyNotification{
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            .notificationTop{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+
+                .notificationIcon{
+                    padding: 8px;
+                    width: 12%;
+                    height: 100%;
+                    background-color: #26b6cf;
+                    color: #fff;
+                    border-radius: 3px 0 0 3px;
+                }
+
+                span{
+                    width: 88%;
+                    height: 100%;
+                    padding: 10px 20px;
+                    display: inline-block;
+                    background-color: #d4f0f5;
+                    color: #26b6cf;
+                    font-size: 14px;
+                    border-radius: 0 3px 3px 0;
+                }
+            }
+
+            .notificationBottom{
+                width: 100%;
+                padding: 12px;
+                background-color: #79849035;
+                color: #798490;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-align: center;
+            }
+        }
+
+        .shoppingLink{
+            display: block;
+            width: 100%;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #000;
+            margin-top: 5px;
+            transition: all .2s ease;
+
+            &:hover{
+                text-decoration: underline;
             }
         }
     }
@@ -339,7 +553,7 @@
                         width: 33%;
 
                         .preferencesList {
-                            justify-content: end;
+                            justify-content: flex-end;
                         }
                     }
                 }
@@ -392,6 +606,12 @@
                         width: 40%;
                     }
                 }
+            }
+        }
+
+        .shoppingCart{
+            &.active{
+                width: 100%;
             }
         }
     }
