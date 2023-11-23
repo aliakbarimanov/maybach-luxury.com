@@ -7,13 +7,13 @@ import About from "./sections/About";
 
 const Home = () => {
     return (
-        <main>
+        <>
             <Hero />
             <Shopping />
             <Promotion />
             <VideoSection />
             <About />
-        </main>
+        </>
     )
 }
 

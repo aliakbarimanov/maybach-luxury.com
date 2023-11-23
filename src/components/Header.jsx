@@ -136,7 +136,7 @@ const Header = () => {
                         <nav className="navBar">
                             <ul className={hiddenNavList ? "navList deactive" : "navList"}>
                                 <li className="navItem">
-                                    <Link to="#">men</Link>
+                                    <Link to="/category">men</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -197,7 +197,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">women</Link>
+                                    <Link to="/category">women</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -258,7 +258,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">accessories</Link>
+                                    <Link to="/category">accessories</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -319,7 +319,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">new</Link>
+                                    <Link to="/category">new</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -380,7 +380,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">fine writing</Link>
+                                    <Link to="/category">fine writing</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -441,7 +441,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">eye wear</Link>
+                                    <Link to="/category">eye wear</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -502,7 +502,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">saddlery</Link>
+                                    <Link to="/category">saddlery</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -563,7 +563,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">boutiques</Link>
+                                    <Link to="/category">boutiques</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">
@@ -624,7 +624,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className="navItem">
-                                    <Link to="#">about</Link>
+                                    <Link to="/category">about</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
                                             <li className="dropItem firstDropItem">

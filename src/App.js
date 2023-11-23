@@ -5,6 +5,7 @@ import ArrowUp from "./components/ArrowUp";
 
 // import pages
 import Home from "./pages/Home";
+import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 
 // import sass
@@ -17,10 +18,13 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
       <ArrowUp />
     </BrowserRouter>

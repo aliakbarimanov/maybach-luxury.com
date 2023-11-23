@@ -1,35 +1,51 @@
-.shoppingCardBig{
+.categoryCard {
     width: 100%;
     height: 600px;
     position: relative;
-    
-    img{
+
+    &:hover {
+        & > .categoryCardOverlay {
+            background: radial-gradient(transparent, #000);
+        }
+    }
+
+    .categoryCardOverlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transition: all .2s ease;
+    }
+
+    img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top;
     }
 
-    .bigCardDescription{
+    .categoryCardDescription {
         width: 100%;
         position: absolute;
         bottom: 0;
         left: 0;
-        z-index: 1;
+        z-index: 99;
         padding: 30px 25px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
 
-        .bigCardTitle{
+        .cardTitle {
             width: 100%;
             font-size: 20px;
             color: #fff;
             text-transform: uppercase;
         }
 
-        .bigCardbtn{
+        .cardBtn {
             padding: 10px 30px;
             font-size: 12px;
             background-color: transparent;
@@ -40,7 +56,7 @@
             cursor: pointer;
             transition: all .2s ease;
 
-            &:hover{
+            &:hover {
                 background-color: #ffffff40;
             }
         }

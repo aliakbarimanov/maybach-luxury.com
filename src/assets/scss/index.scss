@@ -1,16 +1,24 @@
-// import parts
+// import core parts
 @import "./base";
 @import "./variables";
+
+// import components
 @import "./components/header";
 @import "./components/footer";
 @import "./components/shoppingCardBig";
 @import "./components/shoppingCardSmall";
 @import "./components/promotionCard";
 @import "./components/aboutCard";
+@import "./components/categoryCard";
 @import "./components/arrowUp";
-@import "./pages/hero";
-@import "./pages/shopping";
-@import "./pages/promotion";
-@import "./pages/videoSection";
-@import "./pages//about";
+
+// import page sections
+@import "./pages/sections/hero";
+@import "./pages/sections/shopping";
+@import "./pages/sections/promotion";
+@import "./pages/sections/videoSection";
+@import "./pages/sections/about";
+
+// import pages
+@import "./pages/category.scss";
 @import "./pages/notFound";
