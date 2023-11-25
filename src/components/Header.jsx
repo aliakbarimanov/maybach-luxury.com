@@ -1,3 +1,6 @@
+// import dataBase
+import data from "../db/data";
+
 // import react-icons
 import { RxHamburgerMenu } from "react-icons/rx";
 import { LiaSearchSolid } from "react-icons/lia";
@@ -18,6 +21,8 @@ import Logo from "../assets/images/logo/maybach-logo.svg";
 
 // import Link
 import { Link } from "react-router-dom";
+
+console.log(data[0].categories);
 
 const Header = () => {
 
@@ -135,7 +140,72 @@ const Header = () => {
                         </div>
                         <nav className="navBar">
                             <ul className={hiddenNavList ? "navList deactive" : "navList"}>
-                                <li className="navItem">
+                                {
+                                    data[0].categories.map(item=>(
+                                        <li className="navItem">
+                                        <Link to="/category">{item.name}</Link>
+                                        <div className="dropDown">
+                                            <ul className="dropDownCard">
+                                                <li className="dropItem firstDropItem">
+                                                    <Link to="#">Bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Bussines bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Travel bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Daypacks</Link>
+                                                </li>
+                                            </ul>
+                                            <ul className="dropDownCard">
+                                                <li className="dropItem firstDropItem">
+                                                    <Link to="#">Bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Bussines bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Travel bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Daypacks</Link>
+                                                </li>
+                                            </ul>
+                                            <ul className="dropDownCard">
+                                                <li className="dropItem firstDropItem">
+                                                    <Link to="#">Bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Bussines bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Travel bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Daypacks</Link>
+                                                </li>
+                                            </ul>
+                                            <ul className="dropDownCard">
+                                                <li className="dropItem firstDropItem">
+                                                    <Link to="#">Bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Bussines bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Travel bags</Link>
+                                                </li>
+                                                <li className="dropItem">
+                                                    <Link to="#">Daypacks</Link>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    ))
+                                }
+                                {/* <li className="navItem">
                                     <Link to="/category">men</Link>
                                     <div className="dropDown">
                                         <ul className="dropDownCard">
@@ -683,7 +753,7 @@ const Header = () => {
                                             </li>
                                         </ul>
                                     </div>
-                                </li>
+                                </li> */}
                             </ul>
                         </nav>
                         <div className="preferences">

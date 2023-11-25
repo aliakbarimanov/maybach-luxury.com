@@ -1,5 +1,5 @@
-// import images
-import Banner from "../assets/images/banner/banner.webp";
+// import data
+import men from "../db/men";
 
 // import components
 import CategoryCard from "../components/CategoryCard";
@@ -11,32 +11,25 @@ const Category = () => {
     return (
         <section className="category">
             <div className="banner">
-                <img src={Banner} alt="Banner image" />
+                <img src={men.image} alt="Banner image" />
             </div>
             <div className="container">
                 <div className="row">
                     <div className="breadCrumbs">
-                        <Link to="#">men</Link>
+                        <Link to="#">{men.title}</Link>
                     </div>
                     <div className="categoryDetails">
-                        <h2 className="title">Men</h2>
-                        <p className="description">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est consequatur debitis quibusdam consequuntur quae dignissimos.
-                        </p>
+                        <h2 className="title">{men.title}</h2>
+                        <p className="description">{men.description}</p>
                     </div>
                     <div className="categoriesCardList">
-                        <Link className="categoriesCardLink" to="#">
-                            <CategoryCard />
-                        </Link>
-                        <Link className="categoriesCardLink" to="#">
-                            <CategoryCard />
-                        </Link>
-                        <Link className="categoriesCardLink" to="#">
-                            <CategoryCard />
-                        </Link>
-                        <Link className="categoriesCardLink" to="#">
-                            <CategoryCard />
-                        </Link>
+                        {
+                            men.categories.map(item => (
+                                <Link className="categoriesCardLink" to="#">
+                                    <CategoryCard data={item} />
+                                </Link>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
