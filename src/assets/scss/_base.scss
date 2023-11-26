@@ -1,21 +1,36 @@
 // import fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@font-face {
+    font-family: 'Frutiger-Light';
+    src: url(../fonts/frutiger-light.otf);
+}
+
+@font-face {
+    font-family: 'Frutiger-Roman';
+    src: url(../fonts/frutiger-roman.ttf);
+}
+
+@font-face {
+    font-family: 'Luxury-Gold';
+    src: url(../fonts/luxury-gold.otf);
+}
+
 // import reset codes
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Frutiger-Roman', sans-serif;
 }
 
-.container{
+.container {
     width: 97%;
     margin: 0 auto;
 }
 
-.row{
+.row {
     display: flex;
 }

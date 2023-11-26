@@ -21,7 +21,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/category" element={<Category />} />
+          <Route path="/category/id" element={<Category />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

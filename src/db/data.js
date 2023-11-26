@@ -71,7 +71,35 @@ const data = [
                         image: womenFourth,
                     }
                 ]
-            }
+            },
+            {
+                id: 3,
+                name: "accessories",
+            },
+            {
+                id: 4,
+                name: "new",
+            },
+            {
+                id: 5,
+                name: "fine writing",
+            },
+            {
+                id: 6,
+                name: "eyewear",
+            },
+            {
+                id: 7,
+                name: "saddlery",
+            },
+            {
+                id: 8,
+                name: "boutiques",
+            },
+            {
+                id: 9,
+                name: "about",
+            },
         ]
     }
 ];

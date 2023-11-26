@@ -1,5 +1,5 @@
 // import data
-import men from "../db/men";
+import data from "../db/data";
 
 // import components
 import CategoryCard from "../components/CategoryCard";
@@ -7,29 +7,38 @@ import CategoryCard from "../components/CategoryCard";
 // import Link;
 import { Link } from "react-router-dom";
 
+// import useParams
+import { useParams } from "react-router-dom";
+
 const Category = () => {
+
+    const {id} = useParams();
+
+    const category = data[0].categories.filter(item=>item.id==id);
+    console.log(id);
+
     return (
         <section className="category">
             <div className="banner">
-                <img src={men.image} alt="Banner image" />
+                <img src="#" alt="Banner image" />
             </div>
             <div className="container">
                 <div className="row">
                     <div className="breadCrumbs">
-                        <Link to="#">{men.title}</Link>
+                        <Link to="#">men</Link>
                     </div>
                     <div className="categoryDetails">
-                        <h2 className="title">{men.title}</h2>
-                        <p className="description">{men.description}</p>
+                        <h2 className="title">men</h2>
+                        <p className="description">men</p>
                     </div>
                     <div className="categoriesCardList">
-                        {
+                        {/* {
                             men.categories.map(item => (
                                 <Link className="categoriesCardLink" to="#">
                                     <CategoryCard data={item} />
                                 </Link>
                             ))
-                        }
+                        } */}
                     </div>
                 </div>
             </div>
