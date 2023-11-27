@@ -14,7 +14,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ImNotification } from "react-icons/im";
 
 // import react hooks
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 // import logo
 import Logo from "../assets/images/logo/maybach-logo.svg";
@@ -22,17 +22,7 @@ import Logo from "../assets/images/logo/maybach-logo.svg";
 // import Link
 import { Link } from "react-router-dom";
 
-console.log(data[0].categories);
-
 const Header = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
-  const [shoppingCart, setShoppingCart] = useState(false);
-  const [languageList, setLanguageList] = useState(false);
-  const [headerAccountBox, setHeaderAccountBox] = useState(false);
-  const [searchBox, setSearchBox] = useState(false);
-  const [hiddenNavList, setHiddenNavList] = useState(false);
-  const [hiddenLogo, setHiddenLogo] = useState(false);
-
   const [open, setOpen] = useState({
     mobileMenu: false,
     shoppingCart: false,
@@ -41,16 +31,48 @@ const Header = () => {
     searchBox: false,
     hiddenNavList: false,
     hiddenLogo: false,
+    headerDarkMode: false,
   });
 
-  const clickSearch = () => {
-    setSearchBox(!searchBox);
-    setHiddenNavList(!hiddenNavList);
-    setHiddenLogo(!hiddenLogo);
+  const hiddenSearchBoxFunc = () => {
+    setOpen({ ...open, searchBox: !open.searchBox });
+  };
+  const hiddenNavListFunc = () => {
+    setOpen({ ...open, hiddenNavList: !open.hiddenNavList });
+  };
+  const hiddenLogoFunc = () => {
+    setOpen({ ...open, hiddenLogo: !open.hiddenLogo });
   };
 
+  const clickSearch = () => {
+    hiddenLogoFunc();
+    hiddenSearchBoxFunc();
+    hiddenNavListFunc();
+  };
+
+  const body = document.getElementsByTagName("body")[0];
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      setOpen({ ...open, headerDarkMode: true });
+    } else {
+      setOpen({ ...open, headerDarkMode: false });
+    }
+  }
+
+  console.log()
+
   return (
-    <header className="header">
+    <header
+      className={open.headerDarkMode ? "header headerDarkMode" : "header"}
+    >
       <div className={open.mobileMenu ? "mobileMenu active" : "mobileMenu"}>
         <button
           className="closeBtn"
@@ -77,8 +99,8 @@ const Header = () => {
           <h2 className="categoryTitle">categories</h2>
           <ul className="categoryList">
             {data[0].categories.map((item) => (
-              <li className="categoryItem">
-                <Link to="#">
+              <li className="categoryItem" key={item.id}>
+                <Link to={`/category/${item.name}`}>
                   <span>{item.name}</span>
                   <MdKeyboardArrowRight className="rightIcon" />
                 </Link>
@@ -98,22 +120,24 @@ const Header = () => {
       <div className="headerOverlay">
         <div className="container">
           <div className="row">
-            <div
-              className="burgerIcon"
-              onClick={() => setOpen({ ...open, mobileMenu: true })}
-            >
-              <RxHamburgerMenu />
+            <div className="burgerIcon">
+              <RxHamburgerMenu
+                className="icon"
+                onClick={() => setOpen({ ...open, mobileMenu: true })}
+              />
             </div>
-            <div className={hiddenLogo ? "logo deactive" : "logo"}>
+            <div className={open.hiddenLogo ? "logo deactive" : "logo"}>
               <Link to="/">
                 <img src={Logo} alt="Logo" />
               </Link>
             </div>
             <nav className="navBar">
-              <ul className={hiddenNavList ? "navList deactive" : "navList"}>
+              <ul
+                className={open.hiddenNavList ? "navList deactive" : "navList"}
+              >
                 {data[0].categories.map((item) => (
-                  <li className="navItem">
-                    <Link to={`/category/${item.id}`}>{item.name}</Link>
+                  <li className="navItem" key={item.id}>
+                    <Link to={`/category/${item.name}`}>{item.name}</Link>
                     <div className="dropDown">
                       <ul className="dropDownCard">
                         <li className="dropItem firstDropItem">
@@ -180,15 +204,15 @@ const Header = () => {
               <ul className="preferencesList">
                 <li
                   className="preferencesItem language userItem"
-                  onClick={() => {
-                    setLanguageList(!languageList);
-                  }}
+                  onClick={() =>
+                    setOpen({ ...open, languageList: !open.languageList })
+                  }
                 >
                   <span>EN</span>
                   <IoIosArrowDown className="arrowDown" />
                   <ul
                     className={
-                      languageList ? "languageList active" : "languageList"
+                      open.languageList ? "languageList active" : "languageList"
                     }
                   >
                     <li className="languageItem">
@@ -211,15 +235,18 @@ const Header = () => {
                 </li>
                 <li className="preferencesItem userItem">
                   <button
-                    onClick={() => {
-                      setHeaderAccountBox(!headerAccountBox);
-                    }}
+                    onClick={() =>
+                      setOpen({
+                        ...open,
+                        headerAccountBox: !open.headerAccountBox,
+                      })
+                    }
                   >
                     <CiUser />
                   </button>
                   <div
                     className={
-                      headerAccountBox
+                      open.headerAccountBox
                         ? "headerAccountBox active"
                         : "headerAccountBox"
                     }
@@ -236,9 +263,7 @@ const Header = () => {
                 </li>
                 <li
                   className="preferencesItem"
-                  onClick={() => {
-                    setShoppingCart(true);
-                  }}
+                  onClick={() => setOpen({ ...open, shoppingCart: true })}
                 >
                   <a href="#">
                     <HiOutlineShoppingBag />
@@ -249,12 +274,12 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className={shoppingCart ? "shoppingCart active" : "shoppingCart"}>
+      <div
+        className={open.shoppingCart ? "shoppingCart active" : "shoppingCart"}
+      >
         <button
           className="cartExitBtn"
-          onClick={() => {
-            setShoppingCart(false);
-          }}
+          onClick={() => setOpen({ ...open, shoppingCart: false })}
         >
           <IoIosArrowBack className="arrowBack" />
           <span>continue shopping</span>
@@ -271,7 +296,7 @@ const Header = () => {
           Go to shopping cart
         </Link>
       </div>
-      <div className={searchBox ? "searchBox active" : "searchBox"}>
+      <div className={open.searchBox ? "searchBox active" : "searchBox"}>
         <div className="logo">
           <Link to="/">
             <img src={Logo} alt="Logo" />

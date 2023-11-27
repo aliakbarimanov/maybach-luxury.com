@@ -9,31 +9,6 @@
         object-fit: cover;
     }
 
-    &:hover {
-        &::before {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-
-    &::before {
-        content: "";
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(transparent, #000);
-        opacity: 0;
-        visibility: hidden;
-        -webkit-transition: all background-image 0.2s ease linear;
-        -moz-transition: all background-image 0.2s ease linear;
-        -o-transition: all background-image 0.2s ease linear;
-        transition: all background-image 0.2s ease linear;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-    }
-
     .cardOverlay {
         width: 100%;
         height: 100%;
@@ -46,6 +21,11 @@
         justify-content: flex-end;
         align-items: flex-start;
         cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover{
+            background-color: #00000095;
+        }
 
         .aboutCardDescription {
             padding: 30px 25px;
@@ -58,6 +38,7 @@
                 font-size: 20px;
                 color: #fff;
                 text-transform: uppercase;
+                font-family: "Luxury-Gold", sans-serif;
             }
 
             .aboutCardbtn {

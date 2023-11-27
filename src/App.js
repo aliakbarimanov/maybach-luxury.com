@@ -6,6 +6,7 @@ import ArrowUp from "./components/ArrowUp";
 // import pages
 import Home from "./pages/Home";
 import Category from "./pages/Category";
+import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 
 // import sass
@@ -21,7 +22,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/category/id" element={<Category />} />
+          <Route path="/category/:categoryName" element={<Category />} />
+          <Route path="/products" element={<Products />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

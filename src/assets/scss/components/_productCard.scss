@@ -1,0 +1,79 @@
+.productCard {
+    width: 30%;
+    position: relative;
+
+    .heartIcon {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 1;
+        font-size: 22px;
+    }
+
+    .productCardImg {
+        width: 100%;
+        height: 600px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .productCardDetails {
+        .title {
+            color: #070709;
+            font-size: 14px;
+            font-family: 400;
+            font-family: "Luxury-Gold", sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .description{
+            color: #070709;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .priceColorBox{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .price{
+                color: #070709;
+                font-weight: 700;
+            }
+
+            .colors{
+                .colorTitle{
+                    color: #070709;
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                }
+
+                .colorList{
+                    display: flex;
+
+                    .colorItem{
+                        a{
+                            width: 5px;
+                            height: 5px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1800px) {
+    .productCard {
+        .productCardImg {
+            height: 350px;
+        }
+    }
+}

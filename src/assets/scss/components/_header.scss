@@ -5,6 +5,11 @@
     left: 0;
     z-index: 99;
 
+    &.headerDarkMode {
+        background-color: #000;
+        position: sticky;
+    }
+
     .mobileMenu {
         width: 0;
         position: fixed;
@@ -177,8 +182,11 @@
                 .burgerIcon {
                     display: none;
                     color: #fff;
-                    font-size: 20px;
-                    cursor: pointer;
+
+                    .icon{
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
                 }
 
                 .logo {
@@ -204,16 +212,13 @@
 
                         .navItem {
                             a {
-                                font-size: 15px;
+                                font-size: 13px;
+                                letter-spacing: 2px;
                                 text-transform: uppercase;
                                 padding: 5px 15px 15px;
                                 color: #fff;
                                 transition: all 0.2s ease;
-
-
                             }
-
-             
 
                             .dropDown {
                                 width: 100%;
@@ -230,7 +235,6 @@
                                     display: flex;
                                 }
 
-
                                 .dropDownCard {
                                     width: 100%;
                                     display: flex;
@@ -246,6 +250,11 @@
                                             font-size: 13px;
                                             letter-spacing: 1px;
                                             text-transform: uppercase;
+                                            transition: all 0.3s ease;
+
+                                            &:hover {
+                                                text-decoration: underline;
+                                            }
                                         }
                                     }
 
@@ -268,6 +277,7 @@
 
                                 }
                             }
+
                             &:hover {
                                 border-bottom: 1px solid #fff;
 
@@ -300,6 +310,7 @@
 
                                 span {
                                     font-size: 15px;
+                                    letter-spacing: 2px;
                                     font-weight: 600;
                                     color: #fff;
                                     user-select: none;
@@ -434,10 +445,10 @@
 
     .shoppingCart {
         width: 0;
-        height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
+        bottom: 0;
         z-index: 999;
         background-color: #fff;
         transition: all 0.4s ease;
@@ -575,9 +586,10 @@
         border-bottom: 1px solid #fff;
         display: none;
 
-        .logo{
+        .logo {
             width: 120px;
         }
+
         &.active {
             display: flex;
         }
@@ -604,7 +616,30 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1460px) {
+    .header {
+        .headerOverlay {
+            .container {
+                .row {
+
+                    .logo {
+                        width: 10%;
+                    }
+
+                    .navBar {
+                        width: 80%;
+                    }
+
+                    .preferences {
+                        width: 10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1320px) {
     .header {
         .headerOverlay {
             .container {

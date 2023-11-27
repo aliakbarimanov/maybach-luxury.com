@@ -12,6 +12,7 @@
         color: #070709;
         text-transform: uppercase;
         letter-spacing: 2px;
+        font-family: 'Luxury-Gold';
     }
 
     .promotionTitle::after {
@@ -53,8 +54,21 @@
             z-index: 1;
             transition: all .2s ease;
 
+            .promotionCard{
+                position: absolute;
+                z-index: 1;
+                top: -400%;
+                left: -1100%;
+                display: none;
+                transition: all 0.3s ease;
+            }
+
             &:hover{
                 background-color: #00f;
+
+                .promotionCard{
+                    display: block;
+                }
             }
 
             span {
@@ -80,29 +94,6 @@
                 left: 67%;
             }
         }
-
-        .promotionCard{
-            position: absolute;
-            z-index: 1;
-            top: 10%;
-            left: 10%;
-            display: none;
-
-            &.promotionCardFirst{
-                top: 10%;
-                left: 10%;
-            }
-
-            &.promotionCardSecond{
-                top: 10%;
-                left: 40%;
-            }
-
-            &.promotionCardThird{
-                top: 10%;
-                left: 70%;
-            }
-        }
     }
 }
 
@@ -110,6 +101,19 @@
     .promotion {    
         .promotionDescription {
             margin: 0 125px;
+        }
+    }
+}
+
+@media (max-width: 850px){
+    .promotion {
+        .promotionImageBox {
+            .direction {
+                .promotionCard{
+                    top: -300%;
+                    left: -750%;
+                }
+            }
         }
     }
 }
@@ -142,6 +146,32 @@
                 &.directionThird {
                     top: 50%;
                     left: 67%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 580px){
+    .promotion {
+        .promotionImageBox {
+            .direction {
+                .promotionCard{
+                    top: 200%;
+                    left: -550%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px){
+    .promotion {
+        .promotionImageBox {
+            .direction {
+                .promotionCard{
+                    top: 0%;
+                    left: -330%;
                 }
             }
         }

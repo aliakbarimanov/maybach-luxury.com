@@ -28,17 +28,13 @@ const Shopping = () => {
             create unique pieces.
           </p>
           <Swiper
-            slidesPerView={2}
+            slidesPerView={1}
             centeredSlides={false}
             slidesPerGroupSkip={1}
             breakpoints={{
-              200: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-              },
-              769: {
+              1200: {
                 slidesPerView: 2,
-                slidesPerGroup: 2,
+                slidesPerGroup: 1,
               },
             }}
             navigation={true}

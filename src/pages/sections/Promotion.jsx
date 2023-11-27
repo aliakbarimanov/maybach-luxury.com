@@ -20,16 +20,16 @@ const Promotion = () => {
         <img src={maybachPensGrey} alt="Promotion image" />
         <Link to="#" className="direction directionFirst">
           <span></span>
+          <PromotionCard className="promotionCard promotionCardFirst" />
         </Link>
         <Link to="#" className="direction directionSecond">
           <span></span>
+          <PromotionCard className="promotionCard promotionCardSecond" />
         </Link>
         <Link to="#" className="direction directionThird">
           <span></span>
+          <PromotionCard className="promotionCard promotionCardThird" />
         </Link>
-        <PromotionCard className="promotionCard promotionCardFirst" />
-        <PromotionCard className="promotionCard promotionCardSecond" />
-        <PromotionCard className="promotionCard promotionCardThird" />
       </div>
     </section>
   );

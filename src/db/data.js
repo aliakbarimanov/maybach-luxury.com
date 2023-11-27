@@ -21,26 +21,142 @@ const data = [
                 name: "men",
                 image: bannerMen,
                 description: "MAYBACH Icons of Luxury presents a premium range of must-have men's products and accessories.",
-                data: [
+                categories: [
                     {
                         id: 1,
                         name: "bags",
                         image: menFirst,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "business bags",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "travel bags",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "daypacks",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            }
+                        ],
                     },
                     {
                         id: 2,
                         name: "accessories",
                         image: menSecond,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "keyrings",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "wallets & cart cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "phone cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "stationery",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "cufflinks",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
                     },
                     {
                         id: 3,
                         name: "clothing",
                         image: menThird,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "keyrings",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "wallets & cart cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "phone cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "stationery",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "cufflinks",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
                     },
                     {
                         id: 4,
                         name: "collections",
                         image: menFourth,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "keyrings",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "wallets & cart cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "phone cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "stationery",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "cufflinks",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
                     }
                 ]
             },

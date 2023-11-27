@@ -22,7 +22,7 @@ const Hero = () => {
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
-                    delay: 100000,
+                    delay: 6000,
                     disableOnInteraction: false,
                 }}
                 pagination={{

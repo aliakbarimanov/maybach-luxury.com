@@ -24,6 +24,7 @@
                     color: #ba9f79;
                     text-transform: uppercase;
                     letter-spacing: 2px;
+                    font-family: "Luxury-Gold", sans-serif;
                 }
 
                 .bottom {
@@ -32,6 +33,7 @@
                     color: #070709;
                     text-transform: uppercase;
                     letter-spacing: 2px;
+                    font-family: "Luxury-Gold", sans-serif;
                 }
             }
 
@@ -55,6 +57,7 @@
 
             .shoppingSwiperList {
                 width: 100%;
+                gap: 2px;
 
                 .shoppingSwiperItem {
                     width: 100%;
@@ -105,6 +108,8 @@
 
                 .shoppingSwiperList {
                     .shoppingSwiperItem {
+                        gap: 3px;
+
                         .bigCard {
                             width: 67%;
                         }
@@ -132,6 +137,7 @@
                 .shoppingSwiperList {
                     .shoppingSwiperItem {
                         flex-direction: column;
+                        gap: 2px;
 
                         .bigCard {
                             width: 100%;
@@ -142,6 +148,7 @@
                             width: 100%;
                             height: 50%;
                             flex-direction: row;
+                            gap: 2px;
 
                             .smallCard {
                                 width: 50%;
@@ -169,6 +176,8 @@
 
                 .shoppingSwiperList {
                     .shoppingSwiperItem {
+                        gap: 2px;
+
                         .smallCards {
                             flex-direction: column;
 
