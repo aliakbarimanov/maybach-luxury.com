@@ -67,8 +67,6 @@ const Header = () => {
     }
   }
 
-  console.log()
-
   return (
     <header
       className={open.headerDarkMode ? "header headerDarkMode" : "header"}
@@ -265,9 +263,9 @@ const Header = () => {
                   className="preferencesItem"
                   onClick={() => setOpen({ ...open, shoppingCart: true })}
                 >
-                  <a href="#">
+                  <div className="shoppingIcon">
                     <HiOutlineShoppingBag />
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>

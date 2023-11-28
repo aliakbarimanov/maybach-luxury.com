@@ -1,6 +1,7 @@
 .productCard {
     width: 30%;
     position: relative;
+    margin-bottom: 100px;
 
     .heartIcon {
         position: absolute;
@@ -8,9 +9,11 @@
         right: 25px;
         z-index: 1;
         font-size: 22px;
+        cursor: pointer;
     }
 
     .productCardImg {
+        display: inline-block;
         width: 100%;
         height: 600px;
 
@@ -22,7 +25,10 @@
     }
 
     .productCardDetails {
+        padding: 0 5px;
+
         .title {
+            padding: 20px 0 0;
             color: #070709;
             font-size: 14px;
             font-family: 400;
@@ -31,37 +37,65 @@
             text-transform: uppercase;
         }
 
-        .description{
+        .description {
+            padding: 15px 0 0;
             color: #070709;
             font-size: 12px;
             letter-spacing: 1px;
         }
 
-        .priceColorBox{
+        .description::after {
+            content: "";
+            display: block;
+            margin: 20px 0;
+            width: 50px;
+            height: 1px;
+            background-color: #070709;
+        }
+
+        .priceColorBox {
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
-            .price{
+            .price {
                 color: #070709;
                 font-weight: 700;
             }
 
-            .colors{
-                .colorTitle{
+            .colors {
+                .colorTitle {
                     color: #070709;
                     font-size: 12px;
                     letter-spacing: 1px;
+                    margin-bottom: 10px;
                 }
 
-                .colorList{
+                .colorList {
                     display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 5px;
 
-                    .colorItem{
-                        a{
-                            width: 5px;
-                            height: 5px;
+                    .colorItem {
+                        a {
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
                             border-radius: 50%;
+
+                            &.firstColor{
+                                background-color: red;
+                            }
+
+                            &.secondColor{
+                                background-color: blue;
+                            }
+
+                            &.thirdColor{
+                                background-color: green;
+                            }
                         }
                     }
                 }

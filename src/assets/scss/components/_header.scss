@@ -3,7 +3,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 9999;
 
     &.headerDarkMode {
         background-color: #000;
@@ -436,6 +436,12 @@
                                     }
                                 }
                             }
+
+                            .shoppingIcon{
+                                font-size: 23px;
+                                color: #fff;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
@@ -466,7 +472,7 @@
             color: #798490;
             padding: 8px 16px;
             display: flex;
-            justify-content: start;
+            justify-content: flex-start;
             align-items: center;
             gap: 5px;
             cursor: pointer;

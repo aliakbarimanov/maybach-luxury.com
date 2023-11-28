@@ -1,5 +1,5 @@
-// import images
-import banner from "../assets/images/categories/bags/banner.webp";
+// import data
+import data from "../db/data";
 
 // import components
 import ProductCard from "../components/ProductCard";
@@ -11,27 +11,34 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const Products = () => {
+  const { categoryName } = useParams();
+  const { subCategory } = useParams();
+
+  const productCategory = data[0].categories.find(item=>item.name===categoryName);
+  const productSubCategory = productCategory.categories.find(item=>item.name===subCategory);
+
+  const pageData = data[0].products.filter(item=>item.subcategory===subCategory);
+
+  console.log(productSubCategory);
+
   return (
     <section className="products">
       <div className="banner">
-        <img src={banner} alt="banner" />
+        <img src={productSubCategory.banner} alt={productSubCategory.name} />
       </div>
       <div className="container">
         <div className="row">
           <div className="breadCrumbs">
-            <Link to="#">breadcrumb</Link>
+            <Link to={`/category/${categoryName}/${subCategory}`}>{productSubCategory.name}</Link>
           </div>
           <div className="productsPageDetails">
-            <h2 className="title">title</h2>
-            <p className="description">description</p>
+            <h2 className="title">{productSubCategory.name}</h2>
+            <p className="description">{productSubCategory.description}</p>
           </div>
           <div className="productsPageList">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {pageData.map((item, id) => (
+              <ProductCard data={item} key={id} />
+            ))}
           </div>
         </div>
       </div>
