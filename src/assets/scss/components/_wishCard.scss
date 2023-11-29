@@ -1,0 +1,69 @@
+.wishCard {
+    width: 32%;
+    position: relative;
+    margin-bottom: 100px;
+
+    .xIcon {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 1;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .wishCardImg {
+        display: inline-block;
+        width: 100%;
+        height: 400px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .wishCardDetails {
+        padding: 0 5px;
+
+        .title {
+            padding: 20px 0 0;
+            color: #070709;
+            font-size: 14px;
+            font-family: 400;
+            font-family: "Luxury-Gold", sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .description {
+            padding: 15px 0 0;
+            color: #070709;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .description::after {
+            content: "";
+            display: block;
+            margin: 20px 0;
+            width: 50px;
+            height: 1px;
+            background-color: #070709;
+        }
+
+        .price {
+            color: #070709;
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: 1800px) {
+    .productCard {
+        .productCardImg {
+            height: 350px;
+        }
+    }
+}

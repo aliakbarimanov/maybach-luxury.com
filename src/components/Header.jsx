@@ -14,13 +14,16 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ImNotification } from "react-icons/im";
 
 // import react hooks
-import { useState, useRef } from "react";
+import { useState, useContext } from "react";
 
 // import logo
 import Logo from "../assets/images/logo/maybach-logo.svg";
 
 // import Link
 import { Link } from "react-router-dom";
+
+// import Context
+import { Context } from "../utils/WishListContext";
 
 const Header = () => {
   const [open, setOpen] = useState({
@@ -66,6 +69,8 @@ const Header = () => {
       setOpen({ ...open, headerDarkMode: false });
     }
   }
+
+  const { wishList } = useContext(Context);
 
   return (
     <header
@@ -227,9 +232,12 @@ const Header = () => {
                   </button>
                 </li>
                 <li className="preferencesItem">
-                  <a href="#">
+                  <Link to="/wishlist">
                     <CiHeart />
-                  </a>
+                  </Link>
+                  {wishList.length > 0 && (
+                    <span className="wishListCount">{wishList.length}</span>
+                  )}
                 </li>
                 <li className="preferencesItem userItem">
                   <button

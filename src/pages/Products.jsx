@@ -19,8 +19,6 @@ const Products = () => {
 
   const pageData = data[0].products.filter(item=>item.subcategory===subCategory);
 
-  console.log(productSubCategory);
-
   return (
     <section className="products">
       <div className="banner">

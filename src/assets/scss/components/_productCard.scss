@@ -1,7 +1,8 @@
 .productCard {
-    width: 30%;
+    width: 32%;
     position: relative;
     margin-bottom: 100px;
+    user-select: none;
 
     .heartIcon {
         position: absolute;
