@@ -5,6 +5,7 @@ import data from "../db/data";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
@@ -12,11 +13,17 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { CiGift } from "react-icons/ci";
 import { CiCreditCard1 } from "react-icons/ci";
 
+// import react hooks
+import { useContext } from "react";
+
 // import components
 import ProductCard from "../components/ProductCard";
 
 // import Link
 import { Link, useParams } from "react-router-dom";
+
+// import Context
+import { Context } from "../utils/MainContext";
 
 const ProductDetails = () => {
   const { productName } = useParams();
@@ -27,7 +34,9 @@ const ProductDetails = () => {
     (item) => item.subcategory === productData.subcategory
   );
 
-  console.log(similarData);
+  const { wishList, addToWishList, removeCardWishList, addToCard } =
+    useContext(Context);
+  const existingProduct = wishList.find((item) => item.id === data.id);
 
   return (
     <section className="productDetails">
@@ -52,15 +61,25 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="productAbout">
-              <CiHeart className="heartIcon" />
+              {existingProduct ? (
+                <FaHeart
+                  className="heartIcon"
+                  onClick={() => removeCardWishList(data)}
+                />
+              ) : (
+                <CiHeart
+                  className="heartIcon"
+                  onClick={() => addToWishList(data)}
+                />
+              )}
               <h2 className="title">{productData.name}</h2>
               <p className="about">{productData.about}</p>
               <p className="price">{productData.price}</p>
               <div className="colors">
                 <p className="colorTitle">Colors:</p>
                 <ul className="colorList">
-                  {productData.colors.map((color) => (
-                    <li>
+                  {productData.colors.map((color, id) => (
+                    <li key={id}>
                       <button
                         style={{ backgroundColor: color }}
                         className="active"
@@ -69,10 +88,15 @@ const ProductDetails = () => {
                   ))}
                 </ul>
               </div>
-              <form>
-                <input type="number" name="count" min="1" />
-                <button className="addToCartBtn">Add to shopping cart</button>
-              </form>
+              <div className="form">
+                <input type="number" name="count" min="1" defaultValue={1} />
+                <button
+                  className="addToCartBtn"
+                  onClick={() => addToCard(productData)}
+                >
+                  Add to shopping cart
+                </button>
+              </div>
               <ul className="socialList">
                 <li className="socialIcon">
                   <Link to="#">
@@ -141,10 +165,8 @@ const ProductDetails = () => {
           <div className="similarProducts">
             <h2 className="similarTitle">Similar Products</h2>
             <ul className="productsList">
-              {similarData.map((item) => (
-                <li className="productsItem">
-                  <ProductCard data={item} />
-                </li>
+              {similarData.map((item, id) => (
+                <ProductCard data={item} key={id} />
               ))}
             </ul>
           </div>

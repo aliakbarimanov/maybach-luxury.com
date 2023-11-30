@@ -5,7 +5,7 @@ import WishCard from "../components/WishCard";
 import { useContext } from "react";
 
 // import Context
-import { Context } from "../utils/WishListContext";
+import { Context } from "../utils/MainContext";
 
 const WishList = () => {
   const { wishList } = useContext(Context);
@@ -25,6 +25,7 @@ const WishList = () => {
               <WishCard data={item} key={id} />
             ))}
           </ul>
+          <p className={wishList.length===0 ? "emptyNotification active" : "emptyNotification"}>Your wishlist is empty.</p>
         </div>
       </div>
     </section>

@@ -22,11 +22,11 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
 // import Context
-import { WishListContext } from "./utils/WishListContext";
+import { MainContext } from "./utils/MainContext";
 
 function App() {
   return (
-    <WishListContext>
+    <MainContext>
       <BrowserRouter>
         <Header />
         <main>
@@ -42,7 +42,7 @@ function App() {
         <Footer />
         <ArrowUp />
       </BrowserRouter>
-    </WishListContext>
+    </MainContext>
   );
 }
 

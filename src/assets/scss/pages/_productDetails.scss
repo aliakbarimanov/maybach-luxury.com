@@ -166,7 +166,7 @@
                         }
                     }
 
-                    form{
+                    .form{
                         width: 100%;
                         display: flex;
                         gap: 10px;
@@ -181,7 +181,8 @@
                         }
 
                         .addToCartBtn{
-                            width: 50%;
+                            width: 55%;
+                            padding: 0 5px;
                             background-color: #070709;
                             outline: none;
                             border: none;
@@ -317,12 +318,9 @@
                 .productsList{
                     width: 100%;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     align-items: center;
-
-                    .productsItem{
-                        width: 100%;
-                    }
+                    gap: 1.3%;
                 }
             }
         }

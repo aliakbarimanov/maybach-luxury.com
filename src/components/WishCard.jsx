@@ -1,14 +1,22 @@
+// import react hooks
+import { useContext } from "react";
+
 // import react-icons
 import { HiMiniXMark } from "react-icons/hi2";
 
 // import Link;
 import { Link } from "react-router-dom";
 
+// import Context
+import { Context } from "../utils/MainContext";
+
+
 const WishCard = ({ data }) => {
+  const {removeCardWishList} = useContext(Context);
 
   return (
     <div className="wishCard">
-      <HiMiniXMark className="xIcon" onClick={()=>console.log("a")}/>
+      <HiMiniXMark className="xIcon" onClick={() => removeCardWishList(data)} />
       <Link
         to={`http://localhost:3000/product-details/${data.name}`}
         className="wishCardImg"

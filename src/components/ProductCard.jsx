@@ -6,18 +6,18 @@ import { FaHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 // import Context
-import { Context } from "../utils/WishListContext";
+import { Context } from "../utils/MainContext";
 import { useContext } from "react";
 
 const ProductCard = ({ data }) => {
-  const { addToWishList, wishList } = useContext(Context);
+  const { addToWishList, wishList, removeCardWishList } = useContext(Context);
   const existingProduct = wishList.find(item=>item.id===data.id);
 
   return (
     <div className="productCard">
       {
         existingProduct ? (
-          <FaHeart className="heartIcon" onClick={()=>addToWishList(data)}/>
+          <FaHeart className="heartIcon" onClick={()=>removeCardWishList(data)}/>
         ) : (
           <CiHeart className="heartIcon" onClick={()=>addToWishList(data)}/>
         )

@@ -12,6 +12,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { ImNotification } from "react-icons/im";
+import { HiMiniXMark } from "react-icons/hi2";
 
 // import react hooks
 import { useState, useContext } from "react";
@@ -23,7 +24,7 @@ import Logo from "../assets/images/logo/maybach-logo.svg";
 import { Link } from "react-router-dom";
 
 // import Context
-import { Context } from "../utils/WishListContext";
+import { Context } from "../utils/MainContext";
 
 const Header = () => {
   const [open, setOpen] = useState({
@@ -70,7 +71,8 @@ const Header = () => {
     }
   }
 
-  const { wishList } = useContext(Context);
+  const { wishList, card, removeProductCard, cardTotalProducts, subTotalPrice } =
+    useContext(Context);
 
   return (
     <header
@@ -274,6 +276,9 @@ const Header = () => {
                   <div className="shoppingIcon">
                     <HiOutlineShoppingBag />
                   </div>
+                  {card.length > 0 && (
+                    <span className="shoppingCount">{cardTotalProducts}</span>
+                  )}
                 </li>
               </ul>
             </div>
@@ -291,16 +296,60 @@ const Header = () => {
           <span>continue shopping</span>
         </button>
         <h2 className="shoppingCartTitle">Shopping cart</h2>
-        <div className="emptyNotification">
-          <div className="notificationTop">
-            <ImNotification className="notificationIcon" />
-            <span>Your shopping cart is empty</span>
-          </div>
-          <p className="notificationBottom">proceed to checkout</p>
-        </div>
-        <Link to="#" className="shoppingLink">
-          Go to shopping cart
-        </Link>
+        {card.length === 0 ? (
+          <>
+            <div className="emptyNotification">
+              <div className="notificationTop">
+                <ImNotification className="notificationIcon" />
+                <span>Your shopping cart is empty</span>
+              </div>
+              <p className="notificationBottom">browse products</p>
+            </div>
+            <button
+              className="shoppingLink"
+              onClick={() => setOpen({ ...open, shoppingCart: false })}
+            >
+              Go to shopping
+            </button>
+          </>
+        ) : (
+          <>
+            <ul className="cardProductList">
+              {card.map((item, id) => (
+                <li className="cardProductItem" key={id}>
+                  <HiMiniXMark
+                    className="cardProductIcon"
+                    onClick={() => removeProductCard(item)}
+                  />
+                  <div className="cardItemTop">
+                    <div className="cardItemImage">
+                      <img src={item.image} alt="card image" />
+                    </div>
+                    <h4 className="cardItemTitle">{item.name}</h4>
+                  </div>
+                  <p className="cardItemPrice">C {item.price} *</p>
+                  <p className="productQuantity">
+                    Quantity: <span>{item.quantity}</span>
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <div className="subTotal">
+              <span>subtotal</span>
+              <span>USD {subTotalPrice}</span>
+            </div>
+            <div className="shippingCosts">
+              <span>shipping costs</span>
+              <span>+ USD 0.00</span>
+            </div>
+            <p className="shippingInfo">
+              * Prices excl. VAT plus shipping costs
+            </p>
+            <Link to="#" className="cartLink">
+              Go to shopping cart
+            </Link>
+          </>
+        )}
       </div>
       <div className={open.searchBox ? "searchBox active" : "searchBox"}>
         <div className="logo">
