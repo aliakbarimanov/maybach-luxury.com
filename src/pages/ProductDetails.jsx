@@ -1,6 +1,14 @@
 // import data
 import data from "../db/data";
 
+// import redux toolkit
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToWishList,
+  removeFromWishList,
+} from "../redux/slice/wishListSlice";
+import { addToCard } from "../redux/slice/cardSlice";
+
 // import react icons
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
@@ -13,17 +21,11 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { CiGift } from "react-icons/ci";
 import { CiCreditCard1 } from "react-icons/ci";
 
-// import react hooks
-import { useContext } from "react";
-
 // import components
 import ProductCard from "../components/ProductCard";
 
 // import Link
 import { Link, useParams } from "react-router-dom";
-
-// import Context
-import { Context } from "../utils/MainContext";
 
 const ProductDetails = () => {
   const { productName } = useParams();
@@ -34,9 +36,12 @@ const ProductDetails = () => {
     (item) => item.subcategory === productData.subcategory
   );
 
-  const { wishList, addToWishList, removeCardWishList, addToCard } =
-    useContext(Context);
-  const existingProduct = wishList.find((item) => item.id === data.id);
+  const dispatch = useDispatch();
+
+  const wishListData = useSelector((state) => state.wishList.wishListData);
+  const existingWishProduct = wishListData.find(
+    (item) => item.id === productData.id
+  );
 
   return (
     <section className="productDetails">
@@ -61,15 +66,15 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="productAbout">
-              {existingProduct ? (
+              {existingWishProduct ? (
                 <FaHeart
                   className="heartIcon"
-                  onClick={() => removeCardWishList(data)}
+                  onClick={() => dispatch(removeFromWishList(productData))}
                 />
               ) : (
                 <CiHeart
                   className="heartIcon"
-                  onClick={() => addToWishList(data)}
+                  onClick={() => dispatch(addToWishList(productData))}
                 />
               )}
               <h2 className="title">{productData.name}</h2>
@@ -92,7 +97,7 @@ const ProductDetails = () => {
                 <input type="number" name="count" min="1" defaultValue={1} />
                 <button
                   className="addToCartBtn"
-                  onClick={() => addToCard(productData)}
+                  onClick={() => dispatch(addToCard(productData))}
                 >
                   Add to shopping cart
                 </button>

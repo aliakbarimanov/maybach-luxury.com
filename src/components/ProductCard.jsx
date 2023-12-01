@@ -1,3 +1,10 @@
+// import redux toolkit
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToWishList,
+  removeFromWishList,
+} from "../redux/slice/wishListSlice";
+
 // import react-icons
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
@@ -5,21 +12,20 @@ import { FaHeart } from "react-icons/fa6";
 // import Link;
 import { Link } from "react-router-dom";
 
-// import Context
-import { Context } from "../utils/MainContext";
-import { useContext } from "react";
-
 const ProductCard = ({ data }) => {
-  const { addToWishList, wishList, removeCardWishList } = useContext(Context);
-  const existingProduct = wishList.find(item=>item.id===data.id);
+  const dispatch = useDispatch();
+  const wishListData = useSelector((state) => state.wishList.wishListData);
+
+  const existingProduct = wishListData.find(item=>item.id===data.id);
 
   return (
     <div className="productCard">
+      <CiHeart className="heartIcon" onClick={()=>dispatch(addToWishList(data))}/>
       {
         existingProduct ? (
-          <FaHeart className="heartIcon" onClick={()=>removeCardWishList(data)}/>
+          <FaHeart className="heartIcon" onClick={()=>dispatch(removeFromWishList(data))}/>
         ) : (
-          <CiHeart className="heartIcon" onClick={()=>addToWishList(data)}/>
+          <CiHeart className="heartIcon" onClick={()=>dispatch(addToWishList(data))}/>
         )
       }
       <Link

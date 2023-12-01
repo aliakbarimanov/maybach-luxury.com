@@ -1,27 +1,25 @@
-// import react hooks
-import { useState } from "react";
-
 // import redux-toolkit
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    count: 0,
+    wishListData: [],
 };
-
-const data = {};
-
-// const [wishList, setWishList] = useState([]);
 
 export const wishListSlice = createSlice({
     name: "wishList",
     initialState,
     reducers: {
-        // addWishList: () => {
-        //     setWishList(data);
-        // },
-        // wishdListData: wishList,
+        addToWishList: (state, action) => {
+            const existingData = state.wishListData.find(item => item.id === action.payload.id);
+            if (!existingData) {
+                state.wishListData.push(action.payload);
+            }
+        },
+        removeFromWishList: (state, action) => {
+            state.wishListData = state.wishListData.filter(item => item.id !== action.payload.id)
+        },
     },
 });
 
-export const { addWishList } = wishListSlice.actions;
+export const { addToWishList, removeFromWishList } = wishListSlice.actions;
 export default wishListSlice.reducer;

@@ -1,14 +1,11 @@
+// import redux toolkit
+import { useSelector } from "react-redux";
+
 // import components
 import WishCard from "../components/WishCard";
 
-// import react hooks
-import { useContext } from "react";
-
-// import Context
-import { Context } from "../utils/MainContext";
-
 const WishList = () => {
-  const { wishList } = useContext(Context);
+  const wishListData = useSelector(state=>state.wishList.wishListData);
 
   return (
     <section className="wishListPage">
@@ -21,11 +18,11 @@ const WishList = () => {
             </p>
           </div>
           <ul className="wishList">
-            {wishList.map((item, id) => (
+            {wishListData.map((item, id) => (
               <WishCard data={item} key={id} />
             ))}
           </ul>
-          <p className={wishList.length===0 ? "emptyNotification active" : "emptyNotification"}>Your wishlist is empty.</p>
+          <p className={wishListData.length===0 ? "emptyNotification active" : "emptyNotification"}>Your wishlist is empty.</p>
         </div>
       </div>
     </section>

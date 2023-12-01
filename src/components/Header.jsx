@@ -14,17 +14,19 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ImNotification } from "react-icons/im";
 import { HiMiniXMark } from "react-icons/hi2";
 
+// import redux toolkit
+import { useSelector } from "react-redux";
+import { removeFromCard } from "../redux/slice/cardSlice";
+import { useDispatch } from "react-redux";
+
 // import react hooks
-import { useState, useContext } from "react";
+import { useEffect, useState } from "react";
 
 // import logo
 import Logo from "../assets/images/logo/maybach-logo.svg";
 
 // import Link
 import { Link } from "react-router-dom";
-
-// import Context
-import { Context } from "../utils/MainContext";
 
 const Header = () => {
   const [open, setOpen] = useState({
@@ -71,8 +73,32 @@ const Header = () => {
     }
   }
 
-  const { wishList, card, removeProductCard, cardTotalProducts, subTotalPrice } =
-    useContext(Context);
+  const cardListData = useSelector((state) => state.card.cardListData);
+
+  const [cardTotalQuantity, setCartTotalQuantity] = useState(0);
+  const [cardSubTotalPrice, setCardSubTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const cardQuantities = cardListData.map((item) => item.quantity);
+    const cardTotalQuantity = cardQuantities.reduce(
+      (acc, curr) => acc + curr,
+      0
+    );
+    setCartTotalQuantity(cardTotalQuantity);
+
+    const cardTotalPrice = cardListData.map(
+      (item) => item.price.replace(",", "") * item.quantity
+    );
+    const cardSubTotalPrice = cardTotalPrice.reduce(
+      (acc, curr) => acc + curr,
+      0
+    );
+    setCardSubTotalPrice(cardSubTotalPrice);
+  }, [cardListData]);
+
+  const wishListData = useSelector((state) => state.wishList.wishListData);
+
+  const dispatch = useDispatch();
 
   return (
     <header
@@ -237,8 +263,8 @@ const Header = () => {
                   <Link to="/wishlist">
                     <CiHeart />
                   </Link>
-                  {wishList.length > 0 && (
-                    <span className="wishListCount">{wishList.length}</span>
+                  {wishListData.length > 0 && (
+                    <span className="wishListCount">{wishListData.length}</span>
                   )}
                 </li>
                 <li className="preferencesItem userItem">
@@ -276,8 +302,8 @@ const Header = () => {
                   <div className="shoppingIcon">
                     <HiOutlineShoppingBag />
                   </div>
-                  {card.length > 0 && (
-                    <span className="shoppingCount">{cardTotalProducts}</span>
+                  {cardTotalQuantity > 0 && (
+                    <span className="shoppingCount">{cardTotalQuantity}</span>
                   )}
                 </li>
               </ul>
@@ -296,7 +322,7 @@ const Header = () => {
           <span>continue shopping</span>
         </button>
         <h2 className="shoppingCartTitle">Shopping cart</h2>
-        {card.length === 0 ? (
+        {cardListData.length === 0 ? (
           <>
             <div className="emptyNotification">
               <div className="notificationTop">
@@ -315,11 +341,11 @@ const Header = () => {
         ) : (
           <>
             <ul className="cardProductList">
-              {card.map((item, id) => (
+              {cardListData.map((item, id) => (
                 <li className="cardProductItem" key={id}>
                   <HiMiniXMark
                     className="cardProductIcon"
-                    onClick={() => removeProductCard(item)}
+                    onClick={() => dispatch(removeFromCard(item))}
                   />
                   <div className="cardItemTop">
                     <div className="cardItemImage">
@@ -336,7 +362,7 @@ const Header = () => {
             </ul>
             <div className="subTotal">
               <span>subtotal</span>
-              <span>USD {subTotalPrice}</span>
+              <span>USD {cardSubTotalPrice}</span>
             </div>
             <div className="shippingCosts">
               <span>shipping costs</span>

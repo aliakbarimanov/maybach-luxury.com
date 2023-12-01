@@ -22,11 +22,11 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
 // import Context
-import { MainContext } from "./utils/MainContext";
+// import { MainContext } from "./utils/MainContext";
 
 function App() {
   return (
-    <MainContext>
+    <Provider store={store}>
       <BrowserRouter>
         <Header />
         <main>
@@ -42,7 +42,7 @@ function App() {
         <Footer />
         <ArrowUp />
       </BrowserRouter>
-    </MainContext>
+    </Provider>
   );
 }
 
