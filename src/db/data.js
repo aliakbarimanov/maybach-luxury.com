@@ -98,31 +98,25 @@ const data = [
                         categories: [
                             {
                                 id: 1,
-                                name: "keyrings",
+                                name: "jackets",
                                 description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
                                 data: [{}],
                             },
                             {
                                 id: 2,
-                                name: "wallets & cart cases",
+                                name: "shoes",
                                 description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
                                 data: [{}],
                             },
                             {
                                 id: 3,
-                                name: "phone cases",
+                                name: "polo shirts & t-shirts",
                                 description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
                                 data: [{}],
                             },
                             {
                                 id: 4,
-                                name: "stationery",
-                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
-                                data: [{}],
-                            },
-                            {
-                                id: 5,
-                                name: "cufflinks",
+                                name: "suits",
                                 description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
                                 data: [{}],
                             },
@@ -132,6 +126,78 @@ const data = [
                         id: 4,
                         name: "collections",
                         image: menFourth,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "smoking accessories",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "the desire collection",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "unexpected moments",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "vision collection",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "driver's choice",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: "women",
+                image: bannerWomen,
+                description: "MAYBACH Icons of Luxury presents a premium range of must-have men's products and accessories.",
+                categories: [
+                    {
+                        id: 1,
+                        name: "bags",
+                        image: womenFirst,
+                        banner: bannerBag,
+                        description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                        categories: [
+                            {
+                                id: 1,
+                                name: "business bags",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            },
+                            {
+                                id: 2,
+                                name: "travel bags",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            },
+                            {
+                                id: 3,
+                                name: "daypacks",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            }
+                        ],
+                    },
+                    {
+                        id: 2,
+                        name: "accessories",
+                        image: womenSecond,
                         categories: [
                             {
                                 id: 1,
@@ -164,34 +230,74 @@ const data = [
                                 data: [{}],
                             },
                         ],
-                    }
-                ]
-            },
-            {
-                id: 2,
-                name: "women",
-                image: bannerWomen,
-                description: "MAYBACH Icons of Luxury presents a premium range of must-have men's products and accessories.",
-                data: [
-                    {
-                        id: 1,
-                        name: "bags",
-                        image: womenFirst,
-                    },
-                    {
-                        id: 2,
-                        name: "accessories",
-                        image: womenSecond,
                     },
                     {
                         id: 3,
                         name: "clothing",
                         image: womenThird,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "jackets",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "shoes",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "polo shirts & t-shirts",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "suits",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
                     },
                     {
                         id: 4,
                         name: "collections",
                         image: womenFourth,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "smoking accessories",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "the desire collection",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "unexpected moments",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "vision collection",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "driver's choice",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
                     }
                 ]
             },

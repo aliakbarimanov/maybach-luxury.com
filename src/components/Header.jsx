@@ -166,66 +166,22 @@ const Header = () => {
               <ul
                 className={open.hiddenNavList ? "navList deactive" : "navList"}
               >
-                {data[0].categories.map((item) => (
+                {data[0].categories?.map((item) => (
                   <li className="navItem" key={item.id}>
                     <Link to={`/category/${item.name}`}>{item.name}</Link>
                     <div className="dropDown">
-                      <ul className="dropDownCard">
-                        <li className="dropItem firstDropItem">
-                          <Link to="#">Bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Bussines bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Travel bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Daypacks</Link>
-                        </li>
-                      </ul>
-                      <ul className="dropDownCard">
-                        <li className="dropItem firstDropItem">
-                          <Link to="#">Bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Bussines bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Travel bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Daypacks</Link>
-                        </li>
-                      </ul>
-                      <ul className="dropDownCard">
-                        <li className="dropItem firstDropItem">
-                          <Link to="#">Bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Bussines bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Travel bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Daypacks</Link>
-                        </li>
-                      </ul>
-                      <ul className="dropDownCard">
-                        <li className="dropItem firstDropItem">
-                          <Link to="#">Bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Bussines bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Travel bags</Link>
-                        </li>
-                        <li className="dropItem">
-                          <Link to="#">Daypacks</Link>
-                        </li>
-                      </ul>
+                      {item.categories?.map((categories) => (
+                        <ul className="dropDownCard">
+                          <Link className="dropDownLink" to="#">{categories.name}</Link>
+                          <ul className="dropDownList">
+                            {categories.categories?.map((subCategory) => (
+                              <li className="dropItem">
+                                <Link to="#">{subCategory.name}</Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </ul>
+                      ))}
                     </div>
                   </li>
                 ))}
