@@ -9,6 +9,7 @@ import Category from "./pages/Category";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import WishList from "./pages/WishList";
+import ShoppingCart from "./pages/ShoppingCart";
 import NotFound from "./pages/NotFound";
 
 // import sass
@@ -20,9 +21,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import redux && redux tool-kit
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-
-// import Context
-// import { MainContext } from "./utils/MainContext";
 
 function App() {
   return (
@@ -36,6 +34,7 @@ function App() {
             <Route path="/category/:categoryName/:subCategory" element={<Products />} />
             <Route path="/product-details/:productName" element={<ProductDetails />} />
             <Route path="/wishlist" element={<WishList />} />
+            <Route path="/shopping-cart" element={<ShoppingCart />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

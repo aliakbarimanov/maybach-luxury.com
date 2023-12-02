@@ -172,7 +172,9 @@ const Header = () => {
                     <div className="dropDown">
                       {item.categories?.map((categories) => (
                         <ul className="dropDownCard">
-                          <Link className="dropDownLink" to="#">{categories.name}</Link>
+                          <Link className="dropDownLink" to="#">
+                            {categories.name}
+                          </Link>
                           <ul className="dropDownList">
                             {categories.categories?.map((subCategory) => (
                               <li className="dropItem">
@@ -327,7 +329,7 @@ const Header = () => {
             <p className="shippingInfo">
               * Prices excl. VAT plus shipping costs
             </p>
-            <Link to="#" className="cartLink">
+            <Link to="/shopping-cart" className="cartLink">
               Go to shopping cart
             </Link>
           </>
