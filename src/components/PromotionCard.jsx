@@ -1,5 +1,5 @@
 // import image
-import rollerball from "../assets/images/promotion/rollerball.jpg";
+import rollerball from "../assets/images/promotion/rollerball.webp";
 
 const PromotionCard = () => {
   return (

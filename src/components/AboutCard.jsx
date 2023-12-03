@@ -1,7 +1,4 @@
 // import images
-import bag from "../assets/images/about/bag.jpg";
-import bags from "../assets/images/about/bags.jpg";
-import eyewear from "../assets/images/about/eyewear.jpg";
 import retroCars from "../assets/images/about/retroCars.jpg";
 
 // import Link

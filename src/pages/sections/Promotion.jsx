@@ -1,5 +1,5 @@
 // import images
-import maybachPensGrey from "../../assets/images/promotion/maybachPensGrey.jpg";
+import maybachPensGrey from "../../assets/images/promotion/maybachPensGrey.webp";
 
 // import components
 import PromotionCard from "../../components/PromotionCard";

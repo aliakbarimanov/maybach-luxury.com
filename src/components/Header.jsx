@@ -56,23 +56,6 @@ const Header = () => {
     hiddenNavListFunc();
   };
 
-  const body = document.getElementsByTagName("body")[0];
-
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      setOpen({ ...open, headerDarkMode: true });
-    } else {
-      setOpen({ ...open, headerDarkMode: false });
-    }
-  }
-
   const cardListData = useSelector((state) => state.card.cardListData);
 
   const [cardTotalQuantity, setCartTotalQuantity] = useState(0);
@@ -171,14 +154,14 @@ const Header = () => {
                     <Link to={`/category/${item.name}`}>{item.name}</Link>
                     <div className="dropDown">
                       {item.categories?.map((categories) => (
-                        <ul className="dropDownCard">
-                          <Link className="dropDownLink" to="#">
+                        <ul className="dropDownCard" key={categories.id}>
+                          <Link to={`/category/${item.name}/${categories.name}`} className="dropDownLink">
                             {categories.name}
                           </Link>
                           <ul className="dropDownList">
                             {categories.categories?.map((subCategory) => (
-                              <li className="dropItem">
-                                <Link to="#">{subCategory.name}</Link>
+                              <li className="dropItem" key={subCategory.id}>
+                                <Link to={`/category/${item.name}/${categories.name}/${subCategory.name}`}>{subCategory.name}</Link>
                               </li>
                             ))}
                           </ul>
@@ -307,7 +290,7 @@ const Header = () => {
                   />
                   <div className="cardItemTop">
                     <div className="cardItemImage">
-                      <img src={item.image} alt="card image" />
+                      <img src={item.image} alt="card img" />
                     </div>
                     <h4 className="cardItemTitle">{item.name}</h4>
                   </div>

@@ -57,14 +57,23 @@ const ShoppingCart = () => {
                       <img src={bussineBag} alt="#" />
                     </div>
                     <div className="tableAbout">
-                      <p className="tableAboutTitle">the cocon bag</p>
+                      <p className="tableAboutTitle">Lorem ipsum dolor.</p>
                       <p>categ</p>
                       <p>color</p>
                     </div>
                   </td>
                   <td>
                     <select>
-                      <option>1</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
                     </select>
                   </td>
                   <td className="tableUnitPriceBox">USD 1.200*</td>
@@ -76,32 +85,32 @@ const ShoppingCart = () => {
             <div className="priceDetails">
               <p>
                 <span>total</span>
-                <span>2.222</span>
+                <span>USD 2.222*</span>
               </p>
               <p>
                 <span>shipping costs</span>
-                <span>2.222</span>
+                <span>USD 2.222*</span>
               </p>
               <p>
                 <span>net total</span>
-                <span>2.222</span>
+                <span>USD 2.222*</span>
               </p>
-              <p>
+              <p className="lastPrice">
                 <span>grand total</span>
-                <span>2.222</span>
+                <span>USD 2.222*</span>
               </p>
               <div className="btns">
                 <div className="giftForm">
                   <input
                     type="text"
                     name="giftcard"
-                    placeholder="Enter gift card number or discount code..."
+                    placeholder="Enter gift card number"
                   />
                   <button>
-                    <IoMdCheckmark />
+                    <IoMdCheckmark className="okeyIcon" />
                   </button>
                 </div>
-                <button className="checkout">proceed to checkout</button>
+                <button className="checkoutBtn">proceed to checkout</button>
               </div>
             </div>
           </div>

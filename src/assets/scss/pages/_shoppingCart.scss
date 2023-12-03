@@ -1,5 +1,6 @@
 .shoppingCart {
     width: 100%;
+    margin-bottom: 70px;
 
     .container {
         .row {
@@ -60,7 +61,7 @@
 
                 .backShoppingBtn {
                     display: block;
-                    width: 45%;
+                    width: 300px;
                     height: 50px;
                     padding: 0 15px;
                     display: flex;
@@ -101,16 +102,19 @@
 
                 .cartTable {
                     width: 100%;
-                    margin-bottom: 500px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #000000;
 
                     thead {
                         width: 100%;
-                        
+
                         th {
                             text-align: start;
                             text-transform: uppercase;
                             font-weight: 500;
-                            font-size: 13px;
+                            font-size: 12px;
+                            padding-bottom: 10px;
+                            border-bottom: 1px solid #00000015;
                         }
                     }
 
@@ -122,14 +126,15 @@
                             position: relative;
 
                             td {
-                                padding-right: 80px;
+                                padding: 20px 20px 0 0;
+                                width: 15%;
 
                                 &.tableMainBox {
                                     display: flex;
+                                    width: 55%;
 
                                     .imgBox {
-                                        width: 80px;
-                                        height: 80px;
+                                        width: 50%;
 
                                         img {
                                             width: 100%;
@@ -139,14 +144,16 @@
                                     }
 
                                     .tableAbout {
-                                        margin-left: 40px;
+                                        width: 50%;
 
                                         p {
+                                            width: 100%;
                                             font-size: 14px;
                                             letter-spacing: 1.5px;
                                             padding: 5px 10px;
 
                                             &.tableAboutTitle {
+                                                width: 100%;
                                                 text-transform: uppercase;
                                                 letter-spacing: 3px;
                                             }
@@ -154,7 +161,7 @@
                                     }
                                 }
 
-                                select{
+                                select {
                                     border: 1px solid #00000015;
                                     outline: none;
                                     width: 60px;
@@ -162,24 +169,223 @@
                                     padding-left: 5px;
                                 }
 
-                                &.tableUnitPriceBox{
+                                &.tableUnitPriceBox {
                                     font-size: 14px;
                                     letter-spacing: 1px;
                                 }
 
-                                &.tableTotalPriceBox{
+                                &.tableTotalPriceBox {
                                     font-size: 14px;
                                     letter-spacing: 1px;
                                     font-weight: 700;
                                 }
                             }
 
-                            .xIcon{
+                            .xIcon {
                                 position: absolute;
-                                right: 0;
-                                top: 40%;
+                                right: 10px;
+                                top: 52%;
                                 font-size: 18px;
                                 color: #00000095;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .priceDetails {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 15px;
+
+                    p {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &.lastPrice {
+                            border-top: 1px solid #000;
+                            border-bottom: 1px solid #000;
+
+                            span {
+                                font-size: 13px;
+                                font-weight: 600;
+                            }
+                        }
+
+                        span {
+                            text-transform: uppercase;
+                            font-size: 12px;
+                            padding: 15px 0;
+                        }
+                    }
+
+                    .btns {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-top: 10px;
+
+                        .giftForm {
+                            width: 55%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                            input {
+                                width: 90%;
+                                height: 45px;
+                                outline: none;
+                                border: 1px solid #00000010;
+                                font-size: 14px;
+                                letter-spacing: 1.5px;
+                                padding: 0 5px;
+                            }
+
+                            button {
+                                width: 10%;
+                                height: 45px;
+                                outline: none;
+                                border: none;
+                                background-color: #ba9f79;
+                                padding-top: 4px;
+                                cursor: pointer;
+                                transition: all .3s ease;
+
+                                &:hover {
+                                    background-color: #000;
+
+                                    .okeyIcon {
+                                        color: #ba9f79;
+                                    }
+                                }
+
+                                .okeyIcon {
+                                    font-size: 22px;
+                                    color: #000000;
+                                }
+                            }
+                        }
+
+                        .checkoutBtn {
+                            width: 40%;
+                            height: 45px;
+                            outline: none;
+                            border: none;
+                            background-color: #000;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                            letter-spacing: 1px;
+                            cursor: pointer;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                background-color: #fff;
+                                color: #000;
+                                border: 1px solid #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .shoppingCart {
+        .container {
+            .row {
+                flex-direction: column;
+
+                .shoppingCartAbout {
+                    width: 100%;
+                    gap: 20px;
+                }
+
+                .cartDetails {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .shoppingCart {
+        margin-bottom: 50px;
+
+        .container {
+            .row {
+                .shoppingCartAbout {
+                    .shoppingCartTitle {
+                        font-size: 30px;
+                        font-weight: 500;
+                    }
+                }
+
+                .shoppingCartAbout {
+                    .backShoppingBtn {
+                        width: 250px;
+                    }
+                }
+
+                .cartDetails {
+                    .cartTable {
+                        width: 100%;
+                        padding-bottom: 20px;
+                        border-bottom: 1px solid #000000;
+
+                        thead {
+                            display: none;
+                        }
+
+                        tbody {
+                            tr {
+                                display: flex;
+                                flex-direction: column;
+
+                                td {
+                                    width: 100%;
+
+                                    &.tableMainBox {
+                                        width: 100%;
+                                    }
+
+                                    select {
+                                        width: 100px;
+                                        height: 40px;
+                                    }
+                                }
+
+                                .xIcon {
+                                    right: 10px;
+                                    top: 2%;
+                                    font-size: 22px;
+                                }
+                            }
+                        }
+                    }
+
+                    .priceDetails {
+                        .btns {
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 20px;
+
+
+                            .giftForm {
+                                width: 100%;
+                            }
+
+                            .checkoutBtn {
+                                width: 100%;
                             }
                         }
                     }
