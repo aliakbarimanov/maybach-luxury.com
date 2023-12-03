@@ -24,6 +24,9 @@ import { CiCreditCard1 } from "react-icons/ci";
 // import components
 import ProductCard from "../components/ProductCard";
 
+// import useState
+import { useState } from "react";
+
 // import Link
 import { Link, useParams } from "react-router-dom";
 
@@ -43,6 +46,19 @@ const ProductDetails = () => {
     (item) => item.id === productData.id
   );
 
+  const [activeDesc, setActiveDesc] = useState(true);
+  const [activeDet, setActiveDet] = useState(false);
+
+  const clickDesc = () => {
+    setActiveDesc(true);
+    setActiveDet(false);
+  }
+
+  const clickDet = () => {
+    setActiveDesc(false);
+    setActiveDet(true);
+  }
+
   return (
     <section className="productDetails">
       <div className="container">
@@ -61,8 +77,8 @@ const ProductDetails = () => {
               </div>
               <div className="mainImage">
                 <img src={productData.image} alt={productData.name} />
-                <IoIosArrowBack className="leftArrow" />
-                <IoIosArrowForward className="rightArrow" />
+                <IoIosArrowBack className="mainImageNavigation leftArrow" />
+                <IoIosArrowForward className="mainImageNavigation rightArrow" />
               </div>
             </div>
             <div className="productAbout">
@@ -94,7 +110,6 @@ const ProductDetails = () => {
                 </ul>
               </div>
               <div className="form">
-                <input type="number" name="count" min="1" defaultValue={1} />
                 <button
                   className="addToCartBtn"
                   onClick={() => dispatch(addToCard(productData))}
@@ -121,17 +136,19 @@ const ProductDetails = () => {
               </ul>
               <div className="productDescription">
                 <div className="heads">
-                  <h3 className="descriptionTitle">Description</h3>
-                  <h3 className="detailsTitle">Details</h3>
+                  <h3 className={activeDesc ? "active" : ""} onClick={clickDesc}>Description</h3>
+                  <h3 className={activeDet ? "active" : ""} onClick={clickDet}>Details</h3>
                 </div>
                 <div className="bodys">
-                  <p className="descriptionBody">{productData.description}</p>
-                  <div className="detailsBody">
+                  <p className={activeDesc ? "descriptionBody active" : "descriptionBody"}>{productData.description}</p>
+                  <div className={activeDet ? "detailsBody active" : "detailsBody"}>
                     <p>
-                      Color: <span>Blue</span>
+                      <span>Color: </span>
+                      <span>Blue</span>
                     </p>
                     <p>
-                      Material: <span>PEARL CALF LEATHER</span>
+                      <span>Material:</span>
+                      <span>PEARL CALF LEATHER</span>
                     </p>
                   </div>
                 </div>
