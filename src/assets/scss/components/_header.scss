@@ -497,11 +497,13 @@
 
     .shoppingCart {
         width: 0;
+        height: 100vh;
         position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
-        z-index: 999;
+        z-index: 99999;
+        overflow: auto;
         background-color: #fff;
         transition: all 0.4s ease;
 
