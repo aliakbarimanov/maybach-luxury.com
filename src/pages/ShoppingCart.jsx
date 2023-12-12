@@ -8,7 +8,15 @@ import { IoMdCheckmark } from "react-icons/io";
 // import Link
 import { Link } from "react-router-dom";
 
+// import redux
+import { useSelector } from "react-redux/es/hooks/useSelector";
+
 const ShoppingCart = () => {
+
+  const cardListData = useSelector(state=>state.card.cardListData);
+
+  console.log(cardListData)
+
   return (
     <section className="shoppingCart">
       <div className="container">
@@ -51,6 +59,39 @@ const ShoppingCart = () => {
                 <th>Subtotal</th>
               </thead>
               <tbody>
+                {
+                  cardListData.map(item=>(
+                    <tr>
+                    <td className="tableMainBox">
+                      <div className="imgBox">
+                        <img src={item.image} alt="#" />
+                      </div>
+                      <div className="tableAbout">
+                        <p className="tableAboutTitle">{item.name}</p>
+                        <p>{item.name}</p>
+                        <p>{item.name}</p>
+                      </div>
+                    </td>
+                    <td>
+                      <select value={item.quantity}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </td>
+                    <td className="tableUnitPriceBox">USD {item.price}*</td>
+                    <td className="tableTotalPriceBox">USD 1.222*</td>
+                    <HiMiniXMark className="xIcon" />
+                  </tr>
+                  ))
+                }
                 <tr>
                   <td className="tableMainBox">
                     <div className="imgBox">
