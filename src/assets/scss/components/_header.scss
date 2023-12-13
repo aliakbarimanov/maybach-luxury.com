@@ -193,8 +193,7 @@
                     width: 15%;
 
                     &.deactive {
-                        opacity: 0;
-                        visibility: hidden;
+                        display: none;
                     }
                 }
 
@@ -498,6 +497,7 @@
     .shoppingCart {
         width: 0;
         height: 100vh;
+        padding-bottom: 50px;
         position: fixed;
         top: 0;
         right: 0;
@@ -769,9 +769,9 @@
     }
 
     .searchBox {
-        width: 100%;
+        width: 70%;
         position: absolute;
-        top: calc(50% - 20px);
+        top: calc(50% - 10px);
         left: 30%;
         z-index: 9999;
         width: 40%;
@@ -783,10 +783,6 @@
         gap: 10px;
         border-bottom: 1px solid #fff;
         display: none;
-
-        .logo {
-            width: 120px;
-        }
 
         &.active {
             display: flex;

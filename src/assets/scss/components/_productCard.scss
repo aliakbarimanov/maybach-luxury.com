@@ -26,9 +26,11 @@
     }
 
     .productCardDetails {
+        width: 100%;
         padding: 0 5px;
 
         .title {
+            width: 100%;
             padding: 20px 0 0;
             color: #070709;
             font-size: 14px;
@@ -36,6 +38,8 @@
             font-family: "Luxury-Gold", sans-serif;
             letter-spacing: 2px;
             text-transform: uppercase;
+            white-space: nowrap;
+            text-overflow: hidden;
         }
 
         .description {
@@ -54,53 +58,10 @@
             background-color: #070709;
         }
 
-        .priceColorBox {
+        .price {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .price {
-                color: #070709;
-                font-weight: 700;
-            }
-
-            .colors {
-                .colorTitle {
-                    color: #070709;
-                    font-size: 12px;
-                    letter-spacing: 1px;
-                    margin-bottom: 10px;
-                }
-
-                .colorList {
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    gap: 5px;
-
-                    .colorItem {
-                        a {
-                            display: inline-block;
-                            width: 15px;
-                            height: 15px;
-                            border-radius: 50%;
-
-                            &.firstColor{
-                                background-color: red;
-                            }
-
-                            &.secondColor{
-                                background-color: blue;
-                            }
-
-                            &.thirdColor{
-                                background-color: green;
-                            }
-                        }
-                    }
-                }
-            }
+            color: #070709;
+            font-weight: 700;
         }
     }
 }

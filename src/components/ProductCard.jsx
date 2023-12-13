@@ -16,44 +16,35 @@ const ProductCard = ({ data }) => {
   const dispatch = useDispatch();
   const wishListData = useSelector((state) => state.wishList.wishListData);
 
-  const existingProduct = wishListData.find(item=>item.id===data.id);
+  const existingProduct = wishListData.find((item) => item.id === data.id);
 
   return (
     <div className="productCard">
-      <CiHeart className="heartIcon" onClick={()=>dispatch(addToWishList(data))}/>
-      {
-        existingProduct ? (
-          <FaHeart className="heartIcon" onClick={()=>dispatch(removeFromWishList(data))}/>
-        ) : (
-          <CiHeart className="heartIcon" onClick={()=>dispatch(addToWishList(data))}/>
-        )
-      }
+      <CiHeart
+        className="heartIcon"
+        onClick={() => dispatch(addToWishList(data))}
+      />
+      {existingProduct ? (
+        <FaHeart
+          className="heartIcon"
+          onClick={() => dispatch(removeFromWishList(data))}
+        />
+      ) : (
+        <CiHeart
+          className="heartIcon"
+          onClick={() => dispatch(addToWishList(data))}
+        />
+      )}
       <Link
-        to={`http://localhost:3000/product-details/${data.name}`}
+        to={`http://localhost:3000/product-details/${data.id}`}
         className="productCardImg"
       >
-        <img src={data.image} alt={data.name} />
+        <img src={`http://localhost:5000/${data.productImage}`} alt={data.name} />
       </Link>
       <div className="productCardDetails">
         <h3 className="title">{data.name}</h3>
-        <p className="description">{data.about}</p>
-        <div className="priceColorBox">
-          <p className="price">C{data.price}*</p>
-          <div className="colors">
-            <p className="colorTitle">Available colors:</p>
-            <ul className="colorList">
-              <li className="colorItem">
-                <Link className="firstColor" to="/"></Link>
-              </li>
-              <li className="colorItem">
-                <Link className="secondColor" to="/"></Link>
-              </li>
-              <li className="colorItem">
-                <Link className="thirdColor" to="/"></Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <p className="description">If you’re looking for a unique gift or want to treat yourself.</p>
+        <p className="price"> € {data.price} *</p>
       </div>
     </div>
   );

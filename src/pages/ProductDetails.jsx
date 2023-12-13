@@ -1,6 +1,9 @@
 // import data
 import data from "../db/data";
 
+// import provider
+import { getSingleProduct } from "../api/ApiProvider";
+
 // import redux toolkit
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -24,20 +27,31 @@ import { CiCreditCard1 } from "react-icons/ci";
 // import components
 import ProductCard from "../components/ProductCard";
 
-// import useState
-import { useState } from "react";
+// import react hooks
+import { useEffect, useState } from "react";
 
 // import Link
 import { Link, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
-  const { productName } = useParams();
-  const productData = data[0].products.find(
-    (item) => item.name === productName
-  );
-  const similarData = data[0].products.filter(
-    (item) => item.subcategory === productData.subcategory
-  );
+  const { productId } = useParams();
+  const [productData, setProductData] = useState({});
+
+  useEffect(() => {
+    const getData = async () => {
+      await getSingleProduct(productId)
+        .then((res) => setProductData(res.data))
+        .catch((err) => console.warn(err));
+    };
+    getData();
+  }, []);
+
+  // const productData = data[0].products.find(
+  //   (item) => item.name === productName
+  // );
+  // const similarData = data[0].products.filter(
+  //   (item) => item.subcategory === productData.subcategory
+  // );
 
   const dispatch = useDispatch();
 
@@ -52,12 +66,12 @@ const ProductDetails = () => {
   const clickDesc = () => {
     setActiveDesc(true);
     setActiveDet(false);
-  }
+  };
 
   const clickDet = () => {
     setActiveDesc(false);
     setActiveDet(true);
-  }
+  };
 
   return (
     <section className="productDetails">
@@ -71,12 +85,12 @@ const ProductDetails = () => {
           <div className="productBody">
             <div className="productImages">
               <div className="smallImages">
-                <img src={productData.image} alt={productData.name} />
-                <img src={productData.image} alt={productData.name} />
-                <img src={productData.image} alt={productData.name} />
+                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
+                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
+                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
               </div>
               <div className="mainImage">
-                <img src={productData.image} alt={productData.name} />
+                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
                 <IoIosArrowBack className="mainImageNavigation leftArrow" />
                 <IoIosArrowForward className="mainImageNavigation rightArrow" />
               </div>
@@ -96,19 +110,6 @@ const ProductDetails = () => {
               <h2 className="title">{productData.name}</h2>
               <p className="about">{productData.about}</p>
               <p className="price">{productData.price}</p>
-              <div className="colors">
-                <p className="colorTitle">Colors:</p>
-                <ul className="colorList">
-                  {productData.colors.map((color, id) => (
-                    <li key={id}>
-                      <button
-                        style={{ backgroundColor: color }}
-                        className="active"
-                      ></button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
               <div className="form">
                 <button
                   className="addToCartBtn"
@@ -136,12 +137,27 @@ const ProductDetails = () => {
               </ul>
               <div className="productDescription">
                 <div className="heads">
-                  <h3 className={activeDesc ? "active" : ""} onClick={clickDesc}>Description</h3>
-                  <h3 className={activeDet ? "active" : ""} onClick={clickDet}>Details</h3>
+                  <h3
+                    className={activeDesc ? "active" : ""}
+                    onClick={clickDesc}
+                  >
+                    Description
+                  </h3>
+                  <h3 className={activeDet ? "active" : ""} onClick={clickDet}>
+                    Details
+                  </h3>
                 </div>
                 <div className="bodys">
-                  <p className={activeDesc ? "descriptionBody active" : "descriptionBody"}>{productData.description}</p>
-                  <div className={activeDet ? "detailsBody active" : "detailsBody"}>
+                  <p
+                    className={
+                      activeDesc ? "descriptionBody active" : "descriptionBody"
+                    }
+                  >
+                    {productData.description}
+                  </p>
+                  <div
+                    className={activeDet ? "detailsBody active" : "detailsBody"}
+                  >
                     <p>
                       <span>Color: </span>
                       <span>Blue</span>
@@ -184,14 +200,14 @@ const ProductDetails = () => {
               </p>
             </li>
           </ul>
-          <div className="similarProducts">
+          {/* <div className="similarProducts">
             <h2 className="similarTitle">Similar Products</h2>
             <ul className="productsList">
               {similarData.map((item, id) => (
                 <ProductCard data={item} key={id} />
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

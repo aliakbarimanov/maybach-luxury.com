@@ -40,22 +40,6 @@ const Header = () => {
     headerDarkMode: false,
   });
 
-  const hiddenSearchBoxFunc = () => {
-    setOpen({ ...open, searchBox: !open.searchBox });
-  };
-  const hiddenNavListFunc = () => {
-    setOpen({ ...open, hiddenNavList: !open.hiddenNavList });
-  };
-  const hiddenLogoFunc = () => {
-    setOpen({ ...open, hiddenLogo: !open.hiddenLogo });
-  };
-
-  const clickSearch = () => {
-    hiddenLogoFunc();
-    hiddenSearchBoxFunc();
-    hiddenNavListFunc();
-  };
-
   const cardListData = useSelector((state) => state.card.cardListData);
 
   const [cardTotalQuantity, setCartTotalQuantity] = useState(0);
@@ -155,13 +139,20 @@ const Header = () => {
                     <div className="dropDown">
                       {item.categories?.map((categories) => (
                         <ul className="dropDownCard" key={categories.id}>
-                          <Link to={`/category/${item.name}/${categories.name}`} className="dropDownLink">
+                          <Link
+                            to={`/category/${item.name}/${categories.name}`}
+                            className="dropDownLink"
+                          >
                             {categories.name}
                           </Link>
                           <ul className="dropDownList">
                             {categories.categories?.map((subCategory) => (
                               <li className="dropItem" key={subCategory.id}>
-                                <Link to={`/category/${item.name}/${categories.name}/${subCategory.name}`}>{subCategory.name}</Link>
+                                <Link
+                                  to={`/category/${item.name}/${categories.name}/${subCategory.name}`}
+                                >
+                                  {subCategory.name}
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -196,7 +187,16 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="preferencesItem">
-                  <button onClick={clickSearch}>
+                  <button
+                    onClick={() => {
+                      setOpen((prev) => ({
+                        ...prev,
+                        searchBox: !open.searchBox,
+                        hiddenNavList: !open.hiddenNavList,
+                        hiddenLogo: !open.hiddenLogo,
+                      }));
+                    }}
+                  >
                     <LiaSearchSolid />
                   </button>
                 </li>
@@ -319,11 +319,6 @@ const Header = () => {
         )}
       </div>
       <div className={open.searchBox ? "searchBox active" : "searchBox"}>
-        <div className="logo">
-          <Link to="/">
-            <img src={Logo} alt="Logo" />
-          </Link>
-        </div>
         <MdKeyboardArrowRight className="searchBoxIcon" />
         <input
           type="text"
