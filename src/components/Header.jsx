@@ -149,7 +149,7 @@ const Header = () => {
                             {categories.categories?.map((subCategory) => (
                               <li className="dropItem" key={subCategory.id}>
                                 <Link
-                                  to={`/category/${item.name}/${categories.name}/${subCategory.name}`}
+                                  to="/category/men/bags"
                                 >
                                   {subCategory.name}
                                 </Link>

@@ -1,6 +1,9 @@
 // import data
 import data from "../db/data";
 
+// import image
+import bannerBag from "../assets/images/categories/bags/banner.webp";
+
 // import components
 import CategoryCard from "../components/CategoryCard";
 
@@ -20,7 +23,7 @@ const Category = () => {
   return (
     <section className="category">
       <div className="banner">
-        <img src={categoryData.image} alt={categoryData.name} />
+        <img src={bannerBag} alt={categoryData.name} />
       </div>
       <div className="container">
         <div className="row">

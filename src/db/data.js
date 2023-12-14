@@ -16,6 +16,8 @@ import bussineBag from "../assets/images/categories/bags/bussineBag.webp";
 import travelBag from "../assets/images/categories/bags/travelBag.webp";
 import daypack from "../assets/images/categories/bags/daypack.webp";
 
+import retroOne from "../assets/images/about/retroCars.jpg";
+
 
 
 const data = [
@@ -304,30 +306,295 @@ const data = [
             {
                 id: 3,
                 name: "accessories",
+                categories: [
+                    {
+                        id: 2,
+                        name: "accessories",
+                        image: womenSecond,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "keyrings",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "wallets & cart cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "phone cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "stationery",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "cufflinks",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    },
+                    {
+                        id: 4,
+                        name: "collections",
+                        image: womenFourth,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "smoking accessories",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "the desire collection",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "unexpected moments",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    }
+                ]
             },
             {
                 id: 4,
                 name: "new",
+                categories: [
+                    {
+                        id: 1,
+                        name: "bags",
+                        image: womenFirst,
+                        banner: bannerBag,
+                        description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                        categories: [
+                            {
+                                id: 1,
+                                name: "business bags",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            },
+                            {
+                                id: 2,
+                                name: "travel bags",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            },
+                            {
+                                id: 3,
+                                name: "daypacks",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            }
+                        ],
+                    },
+                    {
+                        id: 3,
+                        name: "clothing",
+                        image: womenThird,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "jackets",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "shoes",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "polo shirts & t-shirts",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "suits",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 id: 5,
                 name: "fine writing",
+                categories: [
+                    {
+                        id: 1,
+                        name: "roller ball",
+                        image: womenFirst,
+                        banner: bannerBag,
+                        description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                    },
+                    {
+                        id: 2,
+                        name: "ballpointpen",
+                        image: womenSecond,
+                    },
+                ]
             },
             {
                 id: 6,
                 name: "eyewear",
+                categories: [
+                    {
+                        id: 2,
+                        name: "accessories",
+                        image: womenSecond,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "keyrings",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "wallets & cart cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "phone cases",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "stationery",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 5,
+                                name: "cufflinks",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 id: 7,
                 name: "saddlery",
+                categories: [
+                    {
+                        id: 3,
+                        name: "clothing",
+                        image: womenThird,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "jackets",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 2,
+                                name: "shoes",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 3,
+                                name: "polo shirts & t-shirts",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                            {
+                                id: 4,
+                                name: "suits",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 id: 8,
                 name: "boutiques",
+                categories: [
+                    {
+                        id: 1,
+                        name: "boutiques",
+                        image: womenFirst,
+                        banner: bannerBag,
+                        description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                        categories: [
+                            {
+                                id: 1,
+                                name: "Dubai",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            },
+                            {
+                                id: 2,
+                                name: "Riyadh",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            },
+                            {
+                                id: 3,
+                                name: "Lissabon",
+                                image: bannerBag,
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                            }
+                        ],
+                    },
+                    {
+                        id: 2,
+                        name: "shop in shop",
+                        image: womenSecond,
+                        categories: [
+                            {
+                                id: 1,
+                                name: "berlin",
+                                description: "Discover the exquisite handcrafted leather bags from MAYBACH and enjoy the look, feel and scent of pure elegance.",
+                                data: [{}],
+                            },
+                        ],
+                    },
+                ]
             },
             {
                 id: 9,
                 name: "about",
+                categories: [
+
+                    {
+                        id: 2,
+                        name: "philosophy",
+                        image: womenSecond,
+                    },
+                    {
+                        id: 3,
+                        name: "history",
+                        image: womenThird,
+                    },
+                ]
             },
         ],
         products: [
@@ -385,6 +652,28 @@ const data = [
                 material: "Cotton",
                 stock: 18,
             }
+        ],
+        about: [
+            {
+                title: "the history1",
+                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
+                image: retroOne,
+            },
+            {
+                title: "the history2",
+                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
+                image: daypack,
+            },
+            {
+                title: "the history3",
+                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
+                image: travelBag,
+            },
+            {
+                title: "the history4",
+                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
+                image: bussineBag,
+            },
         ],
     }
 ];
