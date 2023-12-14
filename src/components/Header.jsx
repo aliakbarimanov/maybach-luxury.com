@@ -140,7 +140,7 @@ const Header = () => {
                       {item.categories?.map((categories) => (
                         <ul className="dropDownCard" key={categories.id}>
                           <Link
-                            to={`/category/${item.name}/${categories.name}`}
+                            to="/category/men/bags"
                             className="dropDownLink"
                           >
                             {categories.name}
@@ -148,9 +148,7 @@ const Header = () => {
                           <ul className="dropDownList">
                             {categories.categories?.map((subCategory) => (
                               <li className="dropItem" key={subCategory.id}>
-                                <Link
-                                  to="/category/men/bags"
-                                >
+                                <Link to="/category/men/bags">
                                   {subCategory.name}
                                 </Link>
                               </li>
@@ -272,12 +270,13 @@ const Header = () => {
               </div>
               <p className="notificationBottom">browse products</p>
             </div>
-            <button
+            <Link
+              to="/category/men/bags"
               className="shoppingLink"
               onClick={() => setOpen({ ...open, shoppingCart: false })}
             >
               Go to shopping
-            </button>
+            </Link>
           </>
         ) : (
           <>
@@ -290,11 +289,14 @@ const Header = () => {
                   />
                   <div className="cardItemTop">
                     <div className="cardItemImage">
-                      <img src={item.image} alt="card img" />
+                      <img
+                        src={`http://localhost:5000/${item.productImage}`}
+                        alt={item.name}
+                      />
                     </div>
                     <h4 className="cardItemTitle">{item.name}</h4>
                   </div>
-                  <p className="cardItemPrice">C {item.price} *</p>
+                  <p className="cardItemPrice">€ {item.price} *</p>
                   <p className="productQuantity">
                     Quantity: <span>{item.quantity}</span>
                   </p>
@@ -303,11 +305,11 @@ const Header = () => {
             </ul>
             <div className="subTotal">
               <span>subtotal</span>
-              <span>USD {cardSubTotalPrice}</span>
+              <span>€ {cardSubTotalPrice}</span>
             </div>
             <div className="shippingCosts">
-              <span>shipping costs</span>
-              <span>+ USD 0.00</span>
+              <span>shipping costs +1%</span>
+              <span>€ {cardSubTotalPrice*0.01}</span>
             </div>
             <p className="shippingInfo">
               * Prices excl. VAT plus shipping costs

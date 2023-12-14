@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 // import useParams
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+
+// import provider
 import { getProducts } from "../api/ApiProvider";
 
 const Products = () => {

@@ -15,15 +15,15 @@ const WishCard = ({ data }) => {
     <div className="wishCard">
       <HiMiniXMark className="xIcon" onClick={()=>dispatch(removeFromWishList(data))}/>
       <Link
-        to={`http://localhost:3000/product-details/${data.name}`}
+        to={`http://localhost:3000/product-details/${data.id}`}
         className="wishCardImg"
       >
-        <img src={data.image} alt={data.name} />
+        <img src={`http://localhost:5000/${data.productImage}`} alt={data.name} />
       </Link>
       <div className="wishCardDetails">
         <h3 className="title">{data.name}</h3>
         <p className="description">{data.about}</p>
-        <p className="price">C{data.price}*</p>
+        <p className="price">€ {data.price} *</p>
       </div>
     </div>
   );

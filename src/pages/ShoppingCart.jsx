@@ -1,4 +1,9 @@
-import bussineBag from "../assets/images/categories/bags/bussineBag.webp";
+// import data
+import data from "../db/data";
+
+// import redux toolkit
+import { removeFromCard } from "../redux/slice/cardSlice";
+import { useDispatch } from "react-redux";
 
 // import react icons
 import { FaArrowLeftLong } from "react-icons/fa6";
@@ -11,11 +16,42 @@ import { Link } from "react-router-dom";
 // import redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
+// import react hooks
+import { useState, useEffect } from "react";
+
 const ShoppingCart = () => {
+  const dispatch = useDispatch();
 
-  const cardListData = useSelector(state=>state.card.cardListData);
+  const [inputErr, setInputErr] = useState(false);
+  const [saleCode, setSaleCode] = useState("");
+  const [shippingCost, setShippingCost] = useState("");
+  const cardListData = useSelector((state) => state.card.cardListData);
+  const [cardSubTotalPrice, setCardSubTotalPrice] = useState(0);
+  const [cardNet, setCardNet] = useState(0);
+  const [sale, setSale] = useState(false);
 
-  console.log(cardListData)
+  useEffect(() => {
+    const cardTotalPrice = cardListData.map(
+      (item) => item.price.replace(",", "") * item.quantity
+    );
+    const cardSubTotalPrice = cardTotalPrice.reduce(
+      (acc, curr) => acc + curr,
+      0
+    );
+    setCardSubTotalPrice(cardSubTotalPrice);
+    setShippingCost(cardSubTotalPrice * 0.01);
+  }, [cardListData]);
+
+  // calcSale function
+  const calcSale = () => {
+    if (saleCode === data[0].promocode) {
+      setCardNet((cardSubTotalPrice+shippingCost) * 0.95);
+      setSale(true);
+      setInputErr(false);
+    } else {
+      setInputErr(true);
+    }
+  };
 
   return (
     <section className="shoppingCart">
@@ -45,7 +81,7 @@ const ShoppingCart = () => {
                 data.
               </p>
             </div>
-            <Link to="#" className="backShoppingBtn">
+            <Link to="/category/men/bags" className="backShoppingBtn">
               <FaArrowLeftLong className="backShoppingIcon" />
               <span>contiune shopping</span>
             </Link>
@@ -59,95 +95,78 @@ const ShoppingCart = () => {
                 <th>Subtotal</th>
               </thead>
               <tbody>
-                {
-                  cardListData.map(item=>(
-                    <tr>
+                {cardListData.map((item) => (
+                  <tr>
                     <td className="tableMainBox">
                       <div className="imgBox">
-                        <img src={item.image} alt="#" />
+                        <img
+                          src={`http://localhost:5000/${item.productImage}`}
+                          alt={item.name}
+                        />
                       </div>
                       <div className="tableAbout">
                         <p className="tableAboutTitle">{item.name}</p>
-                        <p>{item.name}</p>
-                        <p>{item.name}</p>
+                        <p>Luxury brand product.</p>
                       </div>
                     </td>
                     <td>
-                      <select value={item.quantity}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                      </select>
+                      <span className="productQuantity">{item.quantity}</span>
                     </td>
-                    <td className="tableUnitPriceBox">USD {item.price}*</td>
-                    <td className="tableTotalPriceBox">USD 1.222*</td>
-                    <HiMiniXMark className="xIcon" />
+                    <td className="tableUnitPriceBox">€ {item.price}*</td>
+                    <td className="tableTotalPriceBox">
+                      € {item.quantity * item.price} *
+                    </td>
+                    <HiMiniXMark
+                      className="xIcon"
+                      onClick={() => dispatch(removeFromCard(item))}
+                    />
                   </tr>
-                  ))
-                }
-                <tr>
-                  <td className="tableMainBox">
-                    <div className="imgBox">
-                      <img src={bussineBag} alt="#" />
-                    </div>
-                    <div className="tableAbout">
-                      <p className="tableAboutTitle">Lorem ipsum dolor.</p>
-                      <p>categ</p>
-                      <p>color</p>
-                    </div>
-                  </td>
-                  <td>
-                    <select>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                    </select>
-                  </td>
-                  <td className="tableUnitPriceBox">USD 1.200*</td>
-                  <td className="tableTotalPriceBox">USD 1.222*</td>
-                  <HiMiniXMark className="xIcon" />
-                </tr>
+                ))}
               </tbody>
             </table>
             <div className="priceDetails">
               <p>
                 <span>total</span>
-                <span>USD 2.222*</span>
+                <span>€ {cardSubTotalPrice} *</span>
               </p>
               <p>
-                <span>shipping costs</span>
-                <span>USD 2.222*</span>
+                <span>
+                  shipping costs <span>+1%</span>
+                </span>
+                <span>€ {shippingCost} *</span>
               </p>
               <p>
                 <span>net total</span>
-                <span>USD 2.222*</span>
+                <span>€ {cardSubTotalPrice + shippingCost} *</span>
               </p>
               <p className="lastPrice">
-                <span>grand total</span>
-                <span>USD 2.222*</span>
+                {sale ? (
+                  <>
+                    <span>
+                      grand total
+                      <span className="saleNotification">
+                        +5% Gift card sale
+                      </span>
+                    </span>
+                    <span>€ {cardNet} *</span>
+                  </>
+                ) : (
+                  <>
+                    <span>grand total</span>
+                    <span>€ {cardSubTotalPrice + shippingCost} *</span>
+                  </>
+                )}
               </p>
               <div className="btns">
                 <div className="giftForm">
+                  {inputErr && <span className="errMsg">Code is false!!</span>}
                   <input
                     type="text"
                     name="giftcard"
                     placeholder="Enter gift card number"
+                    onChange={(e) => setSaleCode(e.target.value)}
                   />
-                  <button>
+                  <button onClick={calcSale}>
                     <IoMdCheckmark className="okeyIcon" />
                   </button>
                 </div>

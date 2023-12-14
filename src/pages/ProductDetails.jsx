@@ -1,6 +1,3 @@
-// import data
-import data from "../db/data";
-
 // import provider
 import { getSingleProduct } from "../api/ApiProvider";
 
@@ -33,9 +30,13 @@ import { useEffect, useState } from "react";
 // import Link
 import { Link, useParams } from "react-router-dom";
 
+// import provider
+import { getProducts } from "../api/ApiProvider";
+
 const ProductDetails = () => {
   const { productId } = useParams();
   const [productData, setProductData] = useState({});
+  const [similarData, setSimilarData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -45,13 +46,6 @@ const ProductDetails = () => {
     };
     getData();
   }, []);
-
-  // const productData = data[0].products.find(
-  //   (item) => item.name === productName
-  // );
-  // const similarData = data[0].products.filter(
-  //   (item) => item.subcategory === productData.subcategory
-  // );
 
   const dispatch = useDispatch();
 
@@ -73,6 +67,19 @@ const ProductDetails = () => {
     setActiveDet(true);
   };
 
+  useEffect(() => {
+    const getProductsList = async () => {
+      await getProducts()
+        .then((res) => {
+          setSimilarData(res.data.slice(0, 3));
+        })
+        .catch((err) => {
+          console.warn(err);
+        });
+    };
+    getProductsList();
+  }, []);
+
   return (
     <section className="productDetails">
       <div className="container">
@@ -83,17 +90,11 @@ const ProductDetails = () => {
             </li>
           </ul>
           <div className="productBody">
-            <div className="productImages">
-              <div className="smallImages">
-                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
-                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
-                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
-              </div>
-              <div className="mainImage">
-                <img src={`http://localhost:5000/${productData.productImage}`} alt={productData.name} />
-                <IoIosArrowBack className="mainImageNavigation leftArrow" />
-                <IoIosArrowForward className="mainImageNavigation rightArrow" />
-              </div>
+            <div className="mainImage">
+              <img
+                src={`http://localhost:5000/${productData.productImage}`}
+                alt={productData.name}
+              />
             </div>
             <div className="productAbout">
               {existingWishProduct ? (
@@ -109,7 +110,7 @@ const ProductDetails = () => {
               )}
               <h2 className="title">{productData.name}</h2>
               <p className="about">{productData.about}</p>
-              <p className="price">{productData.price}</p>
+              <p className="price">€ {productData.price} *</p>
               <div className="form">
                 <button
                   className="addToCartBtn"
@@ -120,17 +121,26 @@ const ProductDetails = () => {
               </div>
               <ul className="socialList">
                 <li className="socialIcon">
-                  <Link to="#">
+                  <Link
+                    target="_blank"
+                    to="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fwww.maybach-luxury.com%252Fen%252Ffull-grain-document-bag-the-adviser-i-yacht-blue%252F&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=ru_RU"
+                  >
                     <FaFacebookF />
                   </Link>
                 </li>
                 <li className="socialIcon">
-                  <Link to="#">
+                  <Link
+                    target="_blank"
+                    to="https://twitter.com/intent/tweet?text=Handcrafted%20full%20grain%20leather%20business%20bag%20%7C%20Exclusive%20design%20by%20MAYBACH%20-%20Icons%20of%20Luxury&url=https%3A%2F%2Fwww.maybach-luxury.com%2Fen%2Ffull-grain-document-bag-the-adviser-i-yacht-blue%2F"
+                  >
                     <CiTwitter />
                   </Link>
                 </li>
                 <li className="socialIcon">
-                  <Link to="#">
+                  <Link
+                    target="_blank"
+                    to="whatsapp://send?text=Handcrafted%20full%20grain%20leather%20business%20bag%20%7C%20Exclusive%20design%20by%20MAYBACH%20-%20Icons%20of%20Luxury%20https%3A%2F%2Fwww.maybach-luxury.com%2Fen%2Ffull-grain-document-bag-the-adviser-i-yacht-blue%2F"
+                  >
                     <FaWhatsapp />
                   </Link>
                 </li>
@@ -153,7 +163,7 @@ const ProductDetails = () => {
                       activeDesc ? "descriptionBody active" : "descriptionBody"
                     }
                   >
-                    {productData.description}
+                    {productData.details}
                   </p>
                   <div
                     className={activeDet ? "detailsBody active" : "detailsBody"}
@@ -200,14 +210,14 @@ const ProductDetails = () => {
               </p>
             </li>
           </ul>
-          {/* <div className="similarProducts">
+          <div className="similarProducts">
             <h2 className="similarTitle">Similar Products</h2>
             <ul className="productsList">
               {similarData.map((item, id) => (
                 <ProductCard data={item} key={id} />
               ))}
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
