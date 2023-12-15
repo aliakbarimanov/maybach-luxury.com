@@ -9,10 +9,10 @@ const AboutCard = (data) => {
     return (
         <div className="aboutCard">
             <img src={data.data.image} alt="About image" />
-            <Link to="#" className="cardOverlay">
+            <Link to="/category/men/bags" className="cardOverlay">
                 <div className="aboutCardDescription">
                     <h2 className="aboutCardTitle">{data.data.title}</h2>
-                    <Link to="#" className="aboutCardbtn">read more</Link>
+                    <Link to="/category/men/bags" className="aboutCardbtn">read more</Link>
                 </div>
             </Link>
         </div>

@@ -3,7 +3,6 @@ import data from "../db/data";
 
 // import react-icons
 import { RxHamburgerMenu } from "react-icons/rx";
-import { LiaSearchSolid } from "react-icons/lia";
 import { CiHeart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -34,10 +33,8 @@ const Header = () => {
     shoppingCart: false,
     languageList: false,
     headerAccountBox: false,
-    searchBox: false,
     hiddenNavList: false,
     hiddenLogo: false,
-    headerDarkMode: false,
   });
 
   const cardListData = useSelector((state) => state.card.cardListData);
@@ -68,9 +65,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   return (
-    <header
-      className={open.headerDarkMode ? "header headerDarkMode" : "header"}
-    >
+    <header className="header">
       <div className={open.mobileMenu ? "mobileMenu active" : "mobileMenu"}>
         <button
           className="closeBtn"
@@ -185,20 +180,6 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="preferencesItem">
-                  <button
-                    onClick={() => {
-                      setOpen((prev) => ({
-                        ...prev,
-                        searchBox: !open.searchBox,
-                        hiddenNavList: !open.hiddenNavList,
-                        hiddenLogo: !open.hiddenLogo,
-                      }));
-                    }}
-                  >
-                    <LiaSearchSolid />
-                  </button>
-                </li>
-                <li className="preferencesItem">
                   <Link to="/wishlist">
                     <CiHeart />
                   </Link>
@@ -309,7 +290,7 @@ const Header = () => {
             </div>
             <div className="shippingCosts">
               <span>shipping costs +1%</span>
-              <span>€ {cardSubTotalPrice*0.01}</span>
+              <span>€ {cardSubTotalPrice * 0.01}</span>
             </div>
             <p className="shippingInfo">
               * Prices excl. VAT plus shipping costs
@@ -319,14 +300,6 @@ const Header = () => {
             </Link>
           </>
         )}
-      </div>
-      <div className={open.searchBox ? "searchBox active" : "searchBox"}>
-        <MdKeyboardArrowRight className="searchBoxIcon" />
-        <input
-          type="text"
-          name="search"
-          placeholder="Search all categories.."
-        />
       </div>
     </header>
   );

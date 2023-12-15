@@ -14,6 +14,11 @@
     src: url(../fonts/luxury-gold.otf);
 }
 
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter.ttf);
+}
+
 // import reset codes
 * {
     margin: 0;
@@ -21,7 +26,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: "Frutiger-Light", sans-serif;
+    font-family: "Frutiger-Light", "Inter", sans-serif;
 }
 
 .container {

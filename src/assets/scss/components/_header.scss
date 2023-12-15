@@ -1,14 +1,11 @@
 .header {
     width: 100%;
-    position: absolute;
+    height: 80px;
+    background-color: #00000070;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 9999;
-
-    &.headerDarkMode {
-        background-color: #000;
-        position: sticky;
-    }
 
     .mobileMenu {
         width: 0;
@@ -304,8 +301,11 @@
 
                 .preferences {
                     width: 15%;
+                    height: 100%;
 
                     .preferencesList {
+                        width: 100%;
+                        height: 100%;
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
@@ -682,7 +682,7 @@
                         text-transform: uppercase;
                         letter-spacing: 3px;
                         text-align: end;
-                        font-family: "Luxury-Gold", sans-serif;
+                        font-family: "Luxury-Gold", "Inter", sans-serif;
                     }
                 }
 
@@ -763,47 +763,6 @@
 
             &:hover {
                 background-color: #00000080;
-            }
-        }
-    }
-
-    .searchBox {
-        width: 70%;
-        position: absolute;
-        top: calc(50% - 10px);
-        left: 30%;
-        z-index: 9999;
-        width: 40%;
-        height: 40px;
-        padding: 0 15px 0 5px;
-        background-color: transparent;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        border-bottom: 1px solid #fff;
-        display: none;
-
-        &.active {
-            display: flex;
-        }
-
-        .searchBoxIcon {
-            font-size: 40px;
-            color: #fff;
-        }
-
-        input {
-            height: 100%;
-            width: 100%;
-            outline: none;
-            border: none;
-            background-color: transparent;
-            color: #fff;
-            font-size: 15px;
-            letter-spacing: 1px;
-
-            &::placeholder {
-                color: #fff;
             }
         }
     }

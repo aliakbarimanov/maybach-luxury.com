@@ -1,3 +1,6 @@
+// import dataBase
+import data from "../../db/data";
+
 // import components
 import ShoppingCardBig from "../../components/ShoppingCardBig";
 import ShoppingCardSmall from "../../components/ShoppingCardSmall";
@@ -41,27 +44,17 @@ const Shopping = () => {
             modules={[Navigation]}
             className="mySwiper shoppingSwiperList"
           >
-            <SwiperSlide className="shoppingSwiperItem">
-              <ShoppingCardBig className="bigCard" />
-              <div className="smallCards">
-                <ShoppingCardSmall className="smallCard" />
-                <ShoppingCardSmall className="smallCard" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="shoppingSwiperItem">
-              <ShoppingCardBig />
-              <div className="smallCards">
-                <ShoppingCardSmall />
-                <ShoppingCardSmall />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="shoppingSwiperItem">
-              <ShoppingCardBig />
-              <div className="smallCards">
-                <ShoppingCardSmall />
-                <ShoppingCardSmall />
-              </div>
-            </SwiperSlide>
+            {
+              data[0].shopping.map(item=>(
+                <SwiperSlide className="shoppingSwiperItem">
+                <ShoppingCardBig className="bigCard" data={item[0]} />
+                <div className="smallCards">
+                  <ShoppingCardSmall className="smallCard" data={item[1]} />
+                  <ShoppingCardSmall className="smallCard" data={item[2]} />
+                </div>
+              </SwiperSlide>
+              ))
+            }
           </Swiper>
         </div>
       </div>

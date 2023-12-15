@@ -1,15 +1,12 @@
 // import react-icons
 import { CiHeart } from "react-icons/ci";
 
-// import images
-import shoes from "../assets/images/shopping/shoes.jpg";
-
-const ShoppingCardSmall = () => {
+const ShoppingCardSmall = (data) => {
     return (
         <div className="shoppingCardSmall">
             <CiHeart className="icon" />
             <div className="imageBox">
-                <img src={shoes} alt="Shopping image" />
+                <img src={data.data.image} alt="Shopping image" />
             </div>
             <div className="smallCardDescription">
                 <h2 className="smallCardTitle">the treasure</h2>

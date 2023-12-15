@@ -1,8 +1,8 @@
-// import slider images
-import sliderOne from "../../assets/images/slider/sliderOne.jpeg";
-import sliderTwo from "../../assets/images/slider/sliderTwo.jpg";
-import sliderThree from "../../assets/images/slider/sliderThree.jpg";
-import sliderFour from "../../assets/images/slider/sliderFour.jpeg";
+// import data
+import data from "../../db/data";
+
+// import react-router-dom
+import { Link } from "react-router-dom";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -31,51 +31,21 @@ const Hero = () => {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper sliderList"
-            >
-                <SwiperSlide className="sliderItem">
-                    <img src={sliderOne} alt="Slider image" />
+            >{
+                data[0].slider.map(item=>(
+                    <SwiperSlide className="sliderItem">
+                    <img src={item.image} alt={item.name} />
                     <div className="sliderOverlay">
                         <div className="sliderDetails">
-                            <h2 className="sliderTitle">eyewear</h2>
+                            <h2 className="sliderTitle">{item.name}</h2>
                             <span></span>
-                            <p className="sliderDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia ea corporis ab aliquid voluptates eligendi.</p>
-                            <button className="sliderButton">see more</button>
+                            <p className="sliderDescription">{item.description}</p>
+                            <Link to="/category/men/bags" className="sliderButton">see more</Link>
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className="sliderItem">
-                    <img src={sliderTwo} alt="Slider image" />
-                    <div className="sliderOverlay">
-                        <div className="sliderDetails">
-                            <h2 className="sliderTitle">eyewear</h2>
-                            <span></span>
-                            <p className="sliderDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia ea corporis ab aliquid voluptates eligendi.</p>
-                            <button className="sliderButton">see more</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="sliderItem">
-                    <img src={sliderThree} alt="Slider image" />
-                    <div className="sliderOverlay">
-                        <div className="sliderDetails">
-                            <h2 className="sliderTitle">eyewear</h2>
-                            <span></span>
-                            <p className="sliderDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia ea corporis ab aliquid voluptates eligendi.</p>
-                            <button className="sliderButton">see more</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide className="sliderItem">
-                    <img src={sliderFour} alt="Slider image" />
-                    <div className="sliderOverlay">
-                        <div className="sliderDetails">
-                            <h2 className="sliderTitle">eyewear</h2>
-                            <span></span>
-                            <p className="sliderDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia ea corporis ab aliquid voluptates eligendi.</p>
-                            <button className="sliderButton">see more</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
+                ))
+            }
             </Swiper>
         </section>
     )

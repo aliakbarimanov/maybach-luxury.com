@@ -92,13 +92,13 @@ const Footer = () => {
                         </div>
                         <ul className="socialLinksList">
                             <li className="socialLink">
-                                <Link to="#"><FaFacebookF className="socialIcon" /></Link>
+                                <Link target="_blank" to="https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fu%3Dhttps%253A%252F%252Fwww.maybach-luxury.com%252Fen%252Ffull-grain-document-bag-the-adviser-i-yacht-blue%252F&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=ru_RU"><FaFacebookF className="socialIcon" /></Link>
                             </li>
                             <li className="socialLink">
-                                <Link to="#"><FaYoutube className="socialIcon" /></Link>
+                                <Link target="_blank" to="https://www.youtube.com/user/maybachluxury"><FaYoutube className="socialIcon" /></Link>
                             </li>
                             <li className="socialLink">
-                                <Link to="#"><FaInstagram className="socialIcon" /></Link>
+                                <Link target="_blank" to="https://www.instagram.com/maybachluxury"><FaInstagram className="socialIcon" /></Link>
                             </li>
                         </ul>
                     </div>
@@ -107,7 +107,7 @@ const Footer = () => {
                             <img src={Logo} alt="Logo" />
                         </div>
                         <p className="footerBottomDesc">
-                            © 2020 MAYBACH Icons of Luxury GmbH | * All prices within the EU incl. VAT. Additional shipping costs and customs fees may apply.
+                            © {new Date().getFullYear()} MAYBACH Icons of Luxury GmbH | * All prices within the EU incl. VAT. Additional shipping costs and customs fees may apply.
                         </p>
                     </div>
                 </div>

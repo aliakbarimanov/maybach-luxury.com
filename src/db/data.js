@@ -1,4 +1,9 @@
 // import images
+import sliderOne from "../assets/images/slider/sliderOne.jpeg";
+import sliderTwo from "../assets/images/slider/sliderTwo.jpg";
+import sliderThree from "../assets/images/slider/sliderThree.jpg";
+import sliderFour from "../assets/images/slider/sliderFour.jpeg";
+
 import menFirst from "../assets/images/categories/men/first.webp";
 import menSecond from "../assets/images/categories/men/second.webp";
 import menThird from "../assets/images/categories/men/third.webp";
@@ -15,6 +20,13 @@ import travelBag from "../assets/images/categories/bags/travelBag.webp";
 import daypack from "../assets/images/categories/bags/daypack.webp";
 
 import retroOne from "../assets/images/about/retroCars.jpg";
+import retroTwo from "../assets/images/about/bags.jpg";
+import retroThree from "../assets/images/about/eyewear.jpg";
+import retroFour from "../assets/images/about/bag.jpg";
+
+
+import men from "../assets/images/shopping/men.jpg";
+import shoes from "../assets/images/shopping/shoes.jpg";
 
 
 
@@ -653,25 +665,81 @@ const data = [
         ],
         about: [
             {
-                title: "the history1",
-                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
+                title: "retro cars",
                 image: retroOne,
             },
             {
-                title: "the history2",
-                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
-                image: daypack,
+                title: "philosophy",
+                image: retroFour,
             },
             {
-                title: "the history3",
-                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
-                image: travelBag,
+                title: "design made in germany",
+                image: retroThree,
             },
             {
-                title: "the history4",
-                description: "scdkjk hjsbdjcc lkjjbblkj sfefcesd",
-                image: bussineBag,
+                title: "mercedes maybach",
+                image: retroTwo,
             },
+        ],
+        slider: [
+            {
+                name: "MEN'S COLLECTION",
+                image: sliderOne,
+                description: "MAYBACH Icons of Luxury presents a tempting range of must-have women's products and accessories.",
+            },
+            {
+                name: "eyewear",
+                image: sliderTwo,
+                description: "MAYBACH Icons of Luxury presents a tempting range of must-have women's products and accessories.",
+            },
+            {
+                name: "ACCESSORIES",
+                image: sliderThree,
+                description: "MAYBACH Icons of Luxury presents a tempting range of must-have women's products and accessories.",
+            },
+            {
+                name: "WOMEN'S COLLECTION",
+                image: sliderFour,
+                description: "MAYBACH Icons of Luxury presents a tempting range of must-have women's products and accessories.",
+            },
+        ],
+        shopping: [
+            [
+                {
+                    image: men,
+                    name: "men",
+                },
+                {
+                    image: bussineBag,
+                },
+                {
+                    image: shoes,
+                },
+            ],
+            [
+                {
+                    image: womenFirst,
+                    name: "women",
+                },
+                {
+                    image: travelBag,
+                },
+                {
+                    image: daypack,
+                },
+            ],
+            [
+                {
+                    image: menThird,
+                    name: "men",
+                },
+                {
+                    image: daypack,
+                },
+                {
+                    image: shoes,
+                },
+            ],
         ],
         promocode: "texnoera5",
     }
