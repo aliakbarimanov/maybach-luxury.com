@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 
 const Shopping = () => {
   return (
@@ -41,20 +41,23 @@ const Shopping = () => {
               },
             }}
             navigation={true}
-            modules={[Navigation]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[Navigation, Autoplay]}
+            loop={true}
             className="mySwiper shoppingSwiperList"
           >
-            {
-              data[0].shopping.map(item=>(
-                <SwiperSlide className="shoppingSwiperItem">
+            {data[0].shopping.map((item, id) => (
+              <SwiperSlide className="shoppingSwiperItem" key={id}>
                 <ShoppingCardBig className="bigCard" data={item[0]} />
                 <div className="smallCards">
                   <ShoppingCardSmall className="smallCard" data={item[1]} />
                   <ShoppingCardSmall className="smallCard" data={item[2]} />
                 </div>
               </SwiperSlide>
-              ))
-            }
+            ))}
           </Swiper>
         </div>
       </div>

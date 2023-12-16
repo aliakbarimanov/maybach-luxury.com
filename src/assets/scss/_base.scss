@@ -1,17 +1,12 @@
 // import fonts
 @font-face {
-    font-family: 'Frutiger-Light';
-    src: url(../fonts/frutiger-light.otf);
-}
-
-@font-face {
-    font-family: 'Frutiger-Roman';
-    src: url(../fonts/frutiger-roman.ttf);
+    font-family: "Frutiger";
+    src: url(../fonts/Frutiger-Normal.ttf);
 }
 
 @font-face {
     font-family: 'Luxury-Gold';
-    src: url(../fonts/luxury-gold.otf);
+    src: url(../fonts/Luxury-Gold.otf);
 }
 
 @font-face {
@@ -26,7 +21,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: "Frutiger-Light", "Inter", sans-serif;
+    font-family: "Frutiger", "Inter", sans-serif;
 }
 
 .container {

@@ -61,9 +61,6 @@ const Products = () => {
             <p className="description">{productSubCategory.description}</p>
           </div>
           <div className="productsPageList">
-            {/* {pageData.map((item, id) => (
-              <ProductCard data={item} key={id} />
-            ))} */}
             {productsList.map((item, id) => (
               <ProductCard data={item} key={id} />
             ))}

@@ -83,7 +83,7 @@ const Header = () => {
           </li>
           <li className="countryBtn">
             <button>
-              <span>C</span>
+              <span>€</span>
               <IoIosArrowDown className="downIcon" />
             </button>
           </li>
@@ -93,7 +93,7 @@ const Header = () => {
           <ul className="categoryList">
             {data[0].categories.map((item) => (
               <li className="categoryItem" key={item.id}>
-                <Link to={`/category/${item.name}`}>
+                <Link to="/category/men/bags">
                   <span>{item.name}</span>
                   <MdKeyboardArrowRight className="rightIcon" />
                 </Link>
